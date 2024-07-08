@@ -1,19 +1,17 @@
-# 🎈 Blank app template
+# Welcome to INST 760!
 
-A simple Streamlit app template for you to modify!
+## Indvidual Notebooks
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+Please configure your indiviual notebook. There is started code available to read in the dataset and clean up the columns. Leave this in place so that we can all be working from the same data and columns. Then do the following: 
 
-### How to run it on your own machine
+1. In the notebooks folder, make a copy of the example notebook. 
+2. Change the name to `LastName-Notebook.ipynb`.
+3. Add code blocks to compute your visualizations. The notebook format should automatically display them.
 
-1. Install the requirements
+## Class Streamlit Dashboard
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+We will take the best visualizations and together build an interactive dashboard that displays them. This will be available for the world to see. Its already live! Click the button to go to the app. Changes made to the code in this repository will change the app automatically. 
 
-2. Run the app
+[![Launch Our Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://umd-inst760-summer2024.streamlit.app/)
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+
