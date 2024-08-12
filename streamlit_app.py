@@ -5,6 +5,7 @@ import pandas as pd
 df = pd.read_csv("notebooks/data.csv")
 
 create_page = st.Page("pages/table.py", title="Raw Table", icon=":material/add_circle:")
+pg = st.navigation([create_page])
 
 st.title("🎈 My new app")
 st.write(
