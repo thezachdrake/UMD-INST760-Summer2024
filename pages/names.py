@@ -1,26 +1,26 @@
 import streamlit as st
 
 
-st.title("Zach Drake")
+st.text("Zach Drake")
 #test
-st.title("Ivy Roberts")
+st.text("Ivy Roberts")
 #test
-st.title("Kristen Purvis")
+st.text("Kristen Purvis")
 #test
-st.title("Victoria Nathaniel")
+st.text("Victoria Nathaniel")
 #test
-st.title("Savannah McNair")
+st.text("Savannah McNair")
 #test
-st.title("Sue McCarty")
+st.text("Sue McCarty")
 #test
-st.title("Lillian Getachew")
+st.text("Lillian Getachew")
 #test
-st.title("Nuwan Hewabethmage")
+st.text("Nuwan Hewabethmage")
 #test
-st.title("Andrea Murano")
+st.text("Andrea Murano")
 #test
-st.title("Sandy Staub")
+st.text("Sandy Staub")
 #added name
-st.title("Goutham Patchipulusu")
+st.text("Goutham Patchipulusu")
 #added name
-st.title("Shanikka Richardson")
+st.text("Shanikka Richardson")
