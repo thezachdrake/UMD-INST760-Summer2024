@@ -8,3 +8,5 @@ count_df = df.groupby("Location Full").count()
 st.header("Top 15 QS Universities")
 # st.bar_chart(df, y="Institution Name", x="QS Overall Score")
 st.write(count_df)
+
+
