@@ -22,3 +22,5 @@ st.title("Andrea Murano")
 st.title("Sandy Staub")
 #added name
 st.title("Goutham Patchipulusu")
+#added name
+st.title("Shanikka Richardson")
