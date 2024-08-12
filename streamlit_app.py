@@ -10,3 +10,5 @@ name_page = st.Page("pages/names.py", title="Class Roster", icon=":material/grou
 pg = st.navigation([top_15_page, table_page, name_page])
 st.set_page_config(page_title="UMD INST 760 - S24", page_icon=":material/edit:")
 pg.run()
+
+"balh blah blah"
