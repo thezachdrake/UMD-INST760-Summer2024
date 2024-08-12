@@ -9,4 +9,4 @@ count_df = count_df.sort_values("count", ascending=False)
 
 st.header("Top 15 QS Universities")
 st.bar_chart(count_df["count"], horizontal=True)
-# st.write(count_df["count"])
+st.write(count_df["count"])
