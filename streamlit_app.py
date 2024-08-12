@@ -1,4 +1,8 @@
 import streamlit as st
+import pandas as pd
+
+
+df = pd.read_csv("notebooks/data.csv")
 
 st.title("🎈 My new app")
 st.write(
@@ -25,3 +29,5 @@ st.title("Andrea Murano")
 st.title("Sandy Staub")
 #added name
 st.title("Goutham Patchipulusu")
+
+st.write(df)
