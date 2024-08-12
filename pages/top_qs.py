@@ -7,4 +7,4 @@ df = df.groupby("Location Full").value_counts()
 
 st.header("Top 15 QS Universities")
 # st.bar_chart(df, y="Institution Name", x="QS Overall Score")
-st.write(df)
+st.write(df.copy())
