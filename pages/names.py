@@ -1,7 +1,6 @@
 import streamlit as st
 
-
-st.text("Zach Drake")
+st.title("Class Roster")
 #test
 st.text("Ivy Roberts")
 #test
