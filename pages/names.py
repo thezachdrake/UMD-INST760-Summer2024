@@ -23,3 +23,5 @@ st.text("Sandy Staub")
 st.text("Goutham Patchipulusu")
 #added name
 st.text("Shanikka Richardson")
+#added name
+st.text("Josh Hochman")
