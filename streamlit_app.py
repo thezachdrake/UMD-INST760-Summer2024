@@ -4,7 +4,7 @@ import pandas as pd
 
 df = pd.read_csv("notebooks/data.csv")
 
-top_25_page = st.Page("pages/top_25.py", title="Top 25", icon=":material/trophy:")
+top_15_page = st.Page("pages/top_qs.py", title="Top 15", icon=":material/trophy:")
 table_page = st.Page("pages/table.py", title="Raw Table", icon=":material/table:")
 name_page = st.Page("pages/names.py", title="Class Roster", icon=":material/groups:")
 pg = st.navigation([top_25_page, table_page, name_page])
