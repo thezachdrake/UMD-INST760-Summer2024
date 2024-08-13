@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 df = pd.read_csv("notebooks/data.csv")
 
@@ -19,4 +20,8 @@ st.divider()
 am_df = df.copy()
 st.subheader("Andrea Murano")
 st.text("Tell me about your plot")
+score_columns = am_df.select_dtypes(include=['float64']).columns
+fig = px.imshow(score_columns, text_auto=True, aspect="auto")
+fig.show()
+
 st.divider()
