@@ -61,6 +61,6 @@ kp_df = df.copy()
 st.subheader("Kristen Purvis")
 st.write("Our prospective student would like to know if institution size influence international research networks. The student is interested in research and possibly an internship in an international location. In general, the larger the institution, the larger the research network.")
 
-sns.barplot(x= "International Research Network", y="Size", hue="Size", data=kp_df)
+plot=sns.barplot(x= "International Research Network", y="Size", hue="Size", data=kp_df)
 plt.show() 
 st.divider()
