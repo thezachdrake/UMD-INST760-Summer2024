@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+pip install --upgrade plotly
 import plotly.express as px
 
 df = pd.read_csv("notebooks/data.csv")
