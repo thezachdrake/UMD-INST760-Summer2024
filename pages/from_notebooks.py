@@ -21,9 +21,7 @@ st.divider()
 am_df = df.copy()
 st.subheader("Andrea Murano")
 st.write("##### **Employment Outcome Correlations in US and International Schools**")
-st.write("Note that the following description is in progress. The following plots display the correlation between employment outcomes and two strongly correlated factors, academic reputation and employer reputation. The employment outcomes score resulting from US schools shows a positive correlation to academic reputation and employer reputation scores. International schools show a moderately positive correlation between employment outcomes and these two factors. It seems that the concentration of lower scoring international schools with regards to the two factors is affecting the overall relationship to employment outcome. It worth exploring what the relationship would look like if the international schools were limited based on a score threshold in the two factors.")
-
-am_US_schools = am_df['Location'] == 'US'
+st.write("Note that the following description is in progress. The following plots display the correlation between employment outcomes and two other scored factors, academic reputation and employer reputation. The employment outcomes score resulting from US schools shows a positive correlation to academic reputation and employer reputation scores. The apparent strength of these relationships in these plots gives some confidence to the claim that US schools with high academic reputation and employer reputation schools are likely to have a high employment outcome score. The visualizations showing non-US schools do not instill this same confidence, though there is a moderately positive correlation. It would be worth breaking this down by country, as well, but for the sake of the question regarding factors might contribute to future employability of students who attended US and non-US schools, it appears that US schools with high academic reputation and employer reputation scores should be considered.") 
 am_int_schools = am_df['Location'] != 'US'
 
 fig, axs = plt.subplots(2, 2, figsize=(10, 10))
