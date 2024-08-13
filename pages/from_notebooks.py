@@ -57,11 +57,12 @@ st.divider()
 
 #New dataset for all schools in France
 ir_France = ir_df['Location'] == 'FR'
-France
+
+am_US_schools = am_df['Location'] == 'US'
 
 # top schools in France
 
-sns.catplot(x="institution_name", y="2025_rank", data=ir_France, kind="bar")
+sns.catplot(x="institution_name", y="2025_rank", data=ir_df[ir_France], kind="bar")
 plt.xlim(0, 3)
 plt.xticks(rotation=45)
 plt.yticks(rotation=0)
