@@ -49,3 +49,22 @@ plt.subplots_adjust(wspace=0.3, hspace=0.4)
 st.pyplot(fig)
 st.divider()
 
+# Ivy Roberts
+ss_df = df.copy()
+st.subheader("Ivy Roberts")
+st.text("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
+st.divider()
+
+#New dataset for all schools in France
+France = df[df.location=="FR"]
+France
+
+# top schools in France
+sns.catplot(x="institution_name", y="2025_rank", data=France, kind="bar")
+plt.xlim(0, 3)
+plt.xticks(rotation=45)
+plt.yticks(rotation=0)
+plt.show()
+
+st.pyplot(fig)
+st.divider()
