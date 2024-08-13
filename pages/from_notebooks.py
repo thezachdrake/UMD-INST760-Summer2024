@@ -20,7 +20,7 @@ st.divider()
 # Andrea Murano
 am_df = df.copy()
 st.subheader("Andrea Murano")
-st.write("#### **Employment Outcome Correlations in US and International Schools**")
+st.write("##### **Employment Outcome Correlations in US and International Schools**")
 st.write("Note that the following description is in progress. The following plots display the correlation between employment outcomes and two strongly correlated factors, academic reputation and employer reputation. The employment outcomes score resulting from US schools shows a positive correlation to academic reputation and employer reputation scores. International schools show a moderately positive correlation between employment outcomes and these two factors. It seems that the concentration of lower scoring international schools with regards to the two factors is affecting the overall relationship to employment outcome. It worth exploring what the relationship would look like if the international schools were limited based on a score threshold in the two factors.")
 
 am_US_schools = am_df['Location'] == 'US'
