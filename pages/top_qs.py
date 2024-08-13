@@ -13,5 +13,5 @@ st.bar_chart(count_df["count"], horizontal=True)
 
 st.divider()
 #Trying out a different way to visualize this data - Andrea Murano
-fig = px.bar(count_df, x="Location Full", y="count", labels={'x':'Location', 'y':'count'})
+fig = px.bar(count_df, x=count_df.index, y="count", labels={'x':'Location', 'y':'count'})
 fig.show()
