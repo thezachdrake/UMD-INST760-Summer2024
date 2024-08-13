@@ -23,22 +23,23 @@ st.subheader("Andrea Murano")
 st.markdown("**Employment Outcomes Correlations in US and International Schools**")
 st.text("Description in progress.")
 
-am_US_schools = am_df_clean['location'] == 'US'
-am_int_schools= am_df_clean['location']!='US'
+am_US_schools = am_df['location'] == 'US'
+am_int_schools = am_df['location'] != 'US'
 
 fig, axs = plt.subplots(2, 2, figsize=(10, 10))
-sns.regplot(x='employment_outcomes', y='academic_reputation', data=am_df_clean[am_US_schools], ax=axs[0, 0])
+sns.regplot(x='employment_outcomes', y='academic_reputation', data=am_df[am_US_schools], ax=axs[0, 0])
 axs[0, 0].set_xlabel('Employment Outcomes')
 axs[0, 0].set_ylabel('Academic Reputation')
-sns.regplot(x='employment_outcomes', y='academic_reputation', data=am_df_clean[am_int_schools], ax=axs[0, 1])
+sns.regplot(x='employment_outcomes', y='academic_reputation', data=am_df[am_int_schools], ax=axs[0, 1])
 axs[0, 1].set_xlabel('Employment Outcomes')
 axs[0, 1].set_ylabel('Academic Reputation')
-sns.regplot(x='employment_outcomes', y='employer_reputation', data=am_df_clean[am_US_schools], ax=axs[1, 0])
+sns.regplot(x='employment_outcomes', y='employer_reputation', data=am_df[am_US_schools], ax=axs[1, 0])
 axs[1, 0].set_xlabel('Employment Outcomes')
 axs[1, 0].set_ylabel('Employer Reputation')
-sns.regplot(x='employment_outcomes', y='employer_reputation', data=am_df_clean[am_int_schools], ax=axs[1, 1])
+sns.regplot(x='employment_outcomes', y='employer_reputation', data=am_df[am_int_schools], ax=axs[1, 1])
 axs[1, 1].set_xlabel('Employment Outcomes')
 axs[1, 1].set_ylabel('Employer Reputation')
+
 plt.subplots_adjust(wspace=0.3, hspace=0.3)
 st.pyplot(fig)
 
