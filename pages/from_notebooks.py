@@ -23,11 +23,6 @@ st.subheader("Andrea Murano")
 st.markdown("**Employment Outcomes Correlations in US and International Schools**")
 st.text("Description in progress.")
 
-am_df['academic_reputation'] = pd.to_numeric(am_df['academic_reputation'], errors='coerce')
-am_df['employer_reputation'] = pd.to_numeric(am_df['employer_reputation'], errors='coerce')
-
-am_df_clean = am_df.dropna(subset=['academic_reputation', 'employer_reputation'])
-
 am_US_schools = am_df_clean['location'] == 'US'
 am_int_schools= am_df_clean['location']!='US'
 
