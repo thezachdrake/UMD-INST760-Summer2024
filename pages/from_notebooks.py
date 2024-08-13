@@ -56,12 +56,11 @@ st.write("In this plot, I discovered from the data that our mystery student will
 st.divider()
 
 #New dataset for all schools in France
-ir_France = df[df.location=="FR"]
-France
+ir_df = df[df.location=="FR"]
 
 # top schools in France
 
-sns.catplot(x="institution_name", y="2025_rank", data=ir_France, kind="bar")
+sns.catplot(x="institution_name", y="2025_rank", data=ir_df, kind="bar")
 plt.xlim(0, 3)
 plt.xticks(rotation=45)
 plt.yticks(rotation=0)
