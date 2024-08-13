@@ -21,7 +21,9 @@ st.divider()
 am_df = df.copy()
 st.subheader("Andrea Murano")
 st.markdown("**An Exploration of Metric Correlation:**")
-st.text("The heatmap below displays strong, moderate, and weak correlations between each of the metrics that contributed to the QS score. Text description in progress")
+st.text("**Note:Text description and heatmap in progress.** 
+The heatmap below displays strong, moderate, and weak correlations between each of 
+the metrics that contributed to the QS score.")
 am_scored_columns = df.select_dtypes(include=['float64'])
 am_score_matrix = am_scored_columns.corr()
 fig, ax = plt.subplots(figsize=(10,10))
