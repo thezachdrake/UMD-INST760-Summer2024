@@ -50,7 +50,7 @@ st.pyplot(fig)
 st.divider()
 
 # Ivy Roberts
-ss_df = df.copy()
+ir_df = df.copy()
 st.subheader("Ivy Roberts")
 st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
 st.divider()
