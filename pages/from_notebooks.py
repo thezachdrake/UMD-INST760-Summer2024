@@ -54,3 +54,12 @@ ir_df = df.copy()
 st.subheader("Ivy Roberts")
 st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
 st.divider()
+
+# Kristen Purvis
+ss_df = df.copy()
+st.subheader("Kristen Purvis")
+st.text("Tell me about your plot")
+
+sns.barplot(data=df,
+x= "international_research_network", y="size", order=['S', 'M', 'L', 'XL'], hue="size", ci=None)
+st.divider()
