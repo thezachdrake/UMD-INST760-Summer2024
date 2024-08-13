@@ -43,7 +43,7 @@ axs[1, 1].set_xlabel('')
 axs[1, 1].set_ylabel('')
 fig.text(0.5, 0.03, 'Employment Outcomes', ha='center', va='center', fontsize=15)
 fig.text(0.08, 0.70, 'Academic Reputation', ha='center', va='center', rotation='vertical', fontsize=12)
-fig.text(0.08, 0.22, 'Employer Reputation', ha='center', va='center', rotation='vertical', fontsize=12)
+fig.text(0.08, 0.24, 'Employer Reputation', ha='center', va='center', rotation='vertical', fontsize=12)
 
 plt.subplots_adjust(wspace=0.1, hspace=0.3)
 st.pyplot(fig)
