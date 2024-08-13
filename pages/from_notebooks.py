@@ -60,6 +60,5 @@ ss_df = df.copy()
 st.subheader("Kristen Purvis")
 st.text("Tell me about your plot")
 
-sns.barplot(data=ss_df,
-x= "international_research_network", y="size", order=['S', 'M', 'L', 'XL'], hue="size", ci=None)
+sns.barplot(data=ss_df, x= "international_research_network", y="size", order=['S', 'M', 'L', 'XL'], hue="size", ci=None)
 st.divider()
