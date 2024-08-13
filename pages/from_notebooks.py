@@ -26,6 +26,7 @@ st.text("Description in progress.")
 am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
+fig, axs = plt.subplots(2, 2, figsize=(10, 10))
 sns.regplot(x='Employment Outcomes', y='Academic Reputation', data=am_df[am_US_schools], ax=axs[0, 0])
 axs[0, 0].set_title('US Schools')
 axs[0, 0].set_xlabel('')
