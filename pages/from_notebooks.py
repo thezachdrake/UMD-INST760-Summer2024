@@ -21,7 +21,7 @@ st.divider()
 am_df = df.copy()
 st.subheader("Andrea Murano")
 st.markdown("**An Exploration of Metric Correlation**")
-st.text("Text description and heatmap in progress. The heatmap below displays strong, 
+st.text("Description and heatmap in progress. Heatmap below displays strong, 
 moderate, and weak correlations between each of 
 the metrics that contributed to the QS score.")
 am_scored_columns = df.select_dtypes(include=['float64'])
