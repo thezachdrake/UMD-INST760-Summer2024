@@ -41,7 +41,7 @@ axs[1, 0].set_ylabel('')
 sns.regplot(x='Employment Outcomes', y='Employer Reputation', data=am_df[am_int_schools], ax=axs[1, 1], color='darkorange', scatter_kws={'s':15})
 axs[1, 1].set_xlabel('')
 axs[1, 1].set_ylabel('')
-fig.text(0.5, 0.35, 'Employment Outcomes', ha='center', va='center', fontsize=15)
+fig.text(0.5, 0, 'Employment Outcomes', ha='center', va='center', fontsize=15)
 fig.text(0.08, 0.73, 'Academic Reputation', ha='center', va='center', rotation='vertical', fontsize=12)
 fig.text(0.08, 0.28, 'Employer Reputation', ha='center', va='center', rotation='vertical', fontsize=12)
 
