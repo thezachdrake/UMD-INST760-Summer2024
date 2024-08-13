@@ -45,7 +45,7 @@ fig.text(0.5, 0.04, 'Employment Outcomes', ha='center', va='center', fontsize=20
 fig.text(0.01, 0.75, 'Academic Reputation', ha='center', va='center', rotation='vertical', fontsize=12)
 fig.text(0.01, 0.25, 'Employer Reputation', ha='center', va='center', rotation='vertical', fontsize=12)
 
-plt.subplots_adjust(wspace=0.3, hspace=0.3)
+plt.subplots_adjust(wspace=0.1, hspace=0.3)
 st.pyplot(fig)
 
 st.divider()
