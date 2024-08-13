@@ -20,11 +20,31 @@ st.divider()
 # Andrea Murano
 am_df = df.copy()
 st.subheader("Andrea Murano")
-st.markdown("**An Exploration of Metric Correlation**")
-st.text("Description and heatmap in progress.")
-am_scored_columns = df.select_dtypes(include=['float64'])
-am_score_matrix = am_scored_columns.corr()
-fig, ax = plt.subplots(figsize=(10,10))
-sns.heatmap(am_score_matrix, ax=ax, cmap="YlOrRd", annot=True)
+st.markdown("**Employment Outcomes Correlations in US and International Schools**")
+st.text("Description in progress.")
+
+am_df['academic_reputation'] = pd.to_numeric(am_df['academic_reputation'], errors='coerce')
+am_df['employer_reputation'] = pd.to_numeric(am_df['employer_reputation'], errors='coerce')
+
+am_df_clean = am_df.dropna(subset=['academic_reputation', 'employer_reputation'])
+
+am_US_schools = am_df_clean['location'] == 'US'
+am_int_schools= am_df_clean['location']!='US'
+
+fig, axs = plt.subplots(2, 2, figsize=(10, 10))
+sns.regplot(x='employment_outcomes', y='academic_reputation', data=am_df_clean[am_US_schools], ax=axs[0, 0])
+axs[0, 0].set_xlabel('Employment Outcomes')
+axs[0, 0].set_ylabel('Academic Reputation')
+sns.regplot(x='employment_outcomes', y='academic_reputation', data=am_df_clean[am_int_schools], ax=axs[0, 1])
+axs[0, 0].set_xlabel('Employment Outcomes')
+axs[0, 0].set_ylabel('Academic Reputation')
+sns.regplot(x='employment_outcomes', y='employer_reputation', data=am_df_clean[am_US_schools], ax=axs[1, 0])
+axs[0, 0].set_xlabel('Employment Outcomes')
+axs[0, 0].set_ylabel('Employer Reputation')
+sns.regplot(x='employment_outcomes', y='employer_reputation', data=am_df_clean[am_int_schools], ax=axs[1, 1])
+axs[0, 0].set_xlabel('Employment Outcomes')
+axs[0, 0].set_ylabel('Employer Reputation')
+plt.subplots_adjust(wspace=0.3, hspace=0.3)
 st.pyplot(fig)
+
 st.divider()
