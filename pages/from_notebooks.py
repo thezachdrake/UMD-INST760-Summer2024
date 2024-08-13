@@ -27,7 +27,7 @@ am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
 fig, axs = plt.subplots(2, 2, figsize=(10, 10))
-sns.regplot(x='Employment Outcomes', y='Academic Reputation', data=am_df[am_US_schools], ax=axs[0, 0], color='cornflowerblue', scatter_kws={'s':10}, line_kws={"color": "midnightblue"})
+sns.regplot(x='Employment Outcomes', y='Academic Reputation', data=am_df[am_US_schools], ax=axs[0, 0], color='cornflowerblue', scatter_kws={'s':10}, line_kws={"color": "navy"})
 axs[0, 0].set_title('US Schools', fontsize=18, color='black', y=1.01, fontweight='bold')
 axs[0, 0].set_xlabel('')
 axs[0, 0].set_ylabel('')
@@ -37,7 +37,7 @@ axs[0, 1].set_title('International Schools', fontsize=18, color='black', y=1.01,
 axs[0, 1].set_xlabel('')
 axs[0, 1].set_ylabel('')
 axs[0, 1].set_facecolor("whitesmoke")
-sns.regplot(x='Employment Outcomes', y='Employer Reputation', data=am_df[am_US_schools], ax=axs[1, 0], color='cornflowerblue', scatter_kws={'s':10}, line_kws={"color": "midnightblue"})
+sns.regplot(x='Employment Outcomes', y='Employer Reputation', data=am_df[am_US_schools], ax=axs[1, 0], color='cornflowerblue', scatter_kws={'s':10}, line_kws={"color": "navy"})
 axs[1, 0].set_xlabel('')
 axs[1, 0].set_ylabel('')
 axs[1, 0].set_facecolor("whitesmoke")
