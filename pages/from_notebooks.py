@@ -42,10 +42,10 @@ sns.regplot(x='Employment Outcomes', y='Employer Reputation', data=am_df[am_int_
 axs[1, 1].set_xlabel('')
 axs[1, 1].set_ylabel('')
 fig.text(0.5, 0.04, 'Employment Outcomes', ha='center', va='center', fontsize=15, fontweight='bold')
-fig.text(0.1, 0.75, 'Academic Reputation', ha='center', va='center', rotation='vertical', fontsize=12, fontweight='bold')
-fig.text(0.1, 0.25, 'Employer Reputation', ha='center', va='center', rotation='vertical', fontsize=12, fontweight='bold')
+fig.text(0.05, 0.75, 'Academic Reputation', ha='center', va='center', rotation='vertical', fontsize=12, fontweight='bold')
+fig.text(0.05, 0.25, 'Employer Reputation', ha='center', va='center', rotation='vertical', fontsize=12, fontweight='bold')
 
 plt.subplots_adjust(wspace=0.1, hspace=0.3)
 st.pyplot(fig)
-
 st.divider()
+
