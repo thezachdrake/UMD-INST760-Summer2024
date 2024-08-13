@@ -55,6 +55,9 @@ st.subheader("Ivy Roberts")
 st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
 st.divider()
 
+#trying something simple
+sns.relplot(ir_df)
+
 #New dataset for all schools in France
 ir_France = ir_df['Location'] == 'FR'
 
