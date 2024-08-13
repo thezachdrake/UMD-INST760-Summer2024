@@ -31,6 +31,7 @@ sns.regplot(x='Employment Outcomes', y='Academic Reputation', data=am_df[am_US_s
 axs[0, 0].set_title('US Schools', fontsize=18, color='mediumblue', y=1.01, fontweight='bold')
 axs[0, 0].set_xlabel('')
 axs[0, 0].set_ylabel('')
+axs[0, 0].set_facecolor("mistyrose")
 sns.regplot(x='Employment Outcomes', y='Academic Reputation', data=am_df[am_int_schools], ax=axs[0, 1], color='darkorange', scatter_kws={'s':15})
 axs[0, 1].set_title('International Schools', fontsize=18, color='darkorange', y=1.01, fontweight='bold')
 axs[0, 1].set_xlabel('')
