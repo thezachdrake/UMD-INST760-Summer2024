@@ -22,6 +22,8 @@ am_df = df.copy()
 st.subheader("Andrea Murano")
 st.write("##### **Employment Outcome Correlations in US and International Schools**")
 st.write("Note that the following description is in progress. The following plots display the correlation between employment outcomes and two other scored factors, academic reputation and employer reputation. The employment outcomes score resulting from US schools shows a positive correlation to academic reputation and employer reputation scores. The apparent strength of these relationships in these plots gives some confidence to the claim that US schools with high academic reputation and employer reputation schools are likely to have a high employment outcome score. The visualizations showing non-US schools do not instill this same confidence, though there is a moderately positive correlation. It would be worth breaking this down by country, as well, but for the sake of the question regarding factors might contribute to future employability of students who attended US and non-US schools, it appears that US schools with high academic reputation and employer reputation scores should be considered.") 
+
+am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
 fig, axs = plt.subplots(2, 2, figsize=(10, 10))
