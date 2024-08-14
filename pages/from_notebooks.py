@@ -17,21 +17,6 @@ st.subheader("Sandra Staub")
 st.text("Tell me about your plot")
 st.divider()
 
-# Ivy Roberts
-ir_df = df.copy()
-st.subheader("Ivy Roberts")
-st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
-#New dataset for all schools in France
-France = df[df.Location=="FR"]
-France
-sns.catplot(x="institution_name", y="2025_rank", data=France, kind="bar")
-plt.xlim(0, 3)
-plt.xticks(rotation=40)
-plt.yticks(rotation=0)
-plt.show()
-st.pyplot(fig)
-st.divider()
-
 # Andrea Murano
 am_df = df.copy()
 st.subheader("Andrea Murano")
@@ -74,5 +59,21 @@ st.subheader("Kristen Purvis")
 st.write("Our prospective student would like to know if institution size influence international research networks. The student is interested in research and possibly an internship in an international location. In general, the larger the institution, the larger the research network.")
 fig=plt.figure()
 sns.barplot(x= "International Research Network", y="Size", hue="Size", data=kp_df, order=['S', 'M', 'L', 'XL'], ci=None)
+st.pyplot(fig)
+st.divider()
+
+# Ivy Roberts
+ir_df = df.copy()
+st.subheader("Ivy Roberts")
+st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
+#New dataset for all schools in France
+data=am_df[am_US_schools],
+ir_France = ir_df['Location'] == 'US'
+fig=plt.figure()
+sns.catplot(x="institution_name", y="2025_rank", data=ir_df[ir_France], kind="bar")
+plt.xlim(0, 3)
+plt.xticks(rotation=40)
+plt.yticks(rotation=0)
+plt.show()
 st.pyplot(fig)
 st.divider()
