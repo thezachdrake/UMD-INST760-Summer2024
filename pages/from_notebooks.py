@@ -67,10 +67,9 @@ ir_df = df.copy()
 st.subheader("Ivy Roberts")
 st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
 #New dataset for all schools in France
-data=ir_df[ir_'location']
-ir_France = ir_df['location'] == 'US'
 fig=plt.figure()
-sns.catplot(x="institution_name", y="2025_rank", data=ir_df[ir_France], kind="bar")
+ir_france = ir_df['location'] == 'US'
+sns.catplot(x="institution_name", y="2025_rank", data=ir_df[ir_france], kind="bar")
 plt.xlim(0, 3)
 plt.xticks(rotation=40)
 plt.yticks(rotation=0)
