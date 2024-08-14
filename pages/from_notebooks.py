@@ -66,6 +66,11 @@ st.divider()
 ir_df = df.copy()
 st.subheader("Ivy Roberts")
 st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
+#Show dataset
+df = pd.read_csv("data.csv")
+df.rename(columns=lambda x: x[0].lower() + x.strip().lower().replace(' ', '_')[1:], inplace=True)
+df = df.convert_dtypes()
+df
 # show new data frame for France
 France = df[df.location=="FR"]
 France
