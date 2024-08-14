@@ -78,5 +78,5 @@ ir_France = ir_df['Location'] == 'FR'
 fig=plt.figure()
 sns.catplot(x="Institution Name", y="2025 Rank", data=ir_df[ir_France], kind="bar")
 
-st.catplot(fig)
+st.pyplot(fig)
 st.divider()
