@@ -66,21 +66,17 @@ st.divider()
 ir_df = df.copy()
 st.subheader("Ivy Roberts")
 st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
+
 #Show dataset
-df = pd.read_csv("data.csv")
-df.rename(columns=lambda x: x[0].lower() + x.strip().lower().replace(' ', '_')[1:], inplace=True)
-df = df.convert_dtypes()
-df
-# show new data frame for France
-France = df[df.location=="FR"]
-France
+df = pd.read_csv("notebooks/data.csv")
+st.write(df)
+
+#create a dataframe just of schools in France
+ir_France = ir_df['Location'] == 'FR'
+
 # plot
 fig=plt.figure()
-ir_france = ir_df['location'] == 'US'
-sns.catplot(x="institution_name", y="2025_rank", data=ir_df[ir_france], kind="bar")
-plt.xlim(0, 3)
-plt.xticks(rotation=40)
-plt.yticks(rotation=0)
-plt.show()
-st.pyplot(fig)
+sns.catplot(x="institution_name", y="2025_rank", data=ir_df[ir_France], kind="bar")
+
+st.catplot(fig)
 st.divider()
