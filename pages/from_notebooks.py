@@ -77,6 +77,9 @@ ir_France = ir_df['Location'] == 'FR'
 # plot
 fig=plt.figure()
 sns.barplot(x="Institution Name", y="2025 Rank", data=ir_df[ir_France])
+plt.xlim(0, 3)
+plt.xticks(rotation=40)
+plt.yticks(rotation=0)
 
 st.pyplot(fig)
 st.divider()
