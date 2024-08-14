@@ -66,20 +66,13 @@ st.divider()
 ir_df = df.copy()
 st.subheader("Ivy Roberts")
 st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
-
-#Show dataset
-df = pd.read_csv("notebooks/data.csv")
-st.write(df)
-
 #create a dataframe just of schools in France
 ir_France = ir_df['Location'] == 'FR'
-
 # plot
 fig=plt.figure()
 sns.barplot(x="Institution Name", y="2025 Rank", data=ir_df[ir_France])
 plt.xlim(0, 3)
 plt.xticks(rotation=40)
 plt.yticks(rotation=0)
-
 st.pyplot(fig)
 st.divider()
