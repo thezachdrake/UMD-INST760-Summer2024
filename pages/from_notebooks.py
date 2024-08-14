@@ -57,6 +57,15 @@ st.divider()
 ir_df = df.copy()
 st.subheader("Ivy Roberts")
 st.write("In this plot, I discovered from the data that our mystery student will be happiest at a top college in France. This plot shows the top schools in France that align with her ideals.")
+#New dataset for all schools in France
+France = df[df.Location=="FR"]
+France
+sns.catplot(x="institution_name", y="2025_rank", data=France, kind="bar")
+plt.xlim(0, 3)
+plt.xticks(rotation=90)
+plt.yticks(rotation=0)
+plt.show()
+st.pyplot(fig)
 st.divider()
 
 # Kristen Purvis
