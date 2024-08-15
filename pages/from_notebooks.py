@@ -82,10 +82,10 @@ pg_df = df.copy()
 st.subheader("Goutham Patchipulusu")
 st.text("When deciding where to apply, considering a university’s investment in environmental sustainability is key. It reflects the school’s commitment to the planet and offers students a chance to engage in green initiatives and learn about innovative environmental practices within a forward-thinking community.")
 size_mapping = {'S': 1, 'M': 2, 'L': 3, 'XL': 4}
-pg_df['size_numeric'] = pg_df['size'].map(size_mapping)
+pg_df['Size Numeric'] = pg_df['Size'].map(size_mapping)
 
 fig=plt.figure()
-ax = sns.barplot(x='size_numeric', y='sustainability', hue='size', data=pg_df, palette='Set2')
+ax = sns.barplot(x='Size Numeric', y='Sustainability', hue='Size', data=pg_df, palette='Set2')
 
 for p in ax.patches:
     ax.annotate(format(p.get_height(),'.1f'), (p.get_x() + p.get_width() / 2., p.get_height()), ha = 'center', va = 'center', xytext = (0, 9),
