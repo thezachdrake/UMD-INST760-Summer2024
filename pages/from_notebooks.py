@@ -109,11 +109,11 @@ st.write("**Employment Reputation and Outcomes by Institution Size**")
 
 size_options = st.multiselect(
     "Select Institution Sizes to Display:",
-    options=top_schools['Size'].unique(),
-    default=top_schools['Size'].unique()
+    options=sr_df['Size'].unique(),
+    default=sr_df['Size'].unique()
 )
 
-filtered_schools = top_schools[top_schools['Size'].isin(size_options)]
+filtered_schools = sr_df[sr_df['Size'].isin(size_options)]
 
 # Filter top 25 school from the dataset 
 #st.write(top_schools)
