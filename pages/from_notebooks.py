@@ -105,12 +105,15 @@ st.divider()
 # Shanikka Richardson
 sr_df = df.copy()
 st.subheader("Shanikka Richardson")
-st.write("Tell me about your plot")
+st.write("**Research**")
 
 top_schools = sr_df.head(25)
-top_schools
+st.scatter_chart(
+    data=top_schools,
+    x='employer_reputation',
+    y='employment_outcomes',
+    x_label='Employer Reputation',
+    y_label='Employment Outcomes',
+    use_container_width=True
+)
 
-fig=plt.figure()
-sns.scatterplot(data=top_schools, x='employer_reputation', y='employment_outcomes', hue='size')
-st.pyplot(plt)
-st.divider()
