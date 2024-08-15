@@ -107,16 +107,19 @@ sr_df = df.copy()
 st.subheader("Shanikka Richardson")
 st.write("**Employment Reputation and Outcomes by Institution Size**")
 
+# Order by size
+size_order = ['S', 'M', 'L', 'XL']
+sr_df['Size'] = pd.Categorical(sr_df['Size'], categories=size_order, ordered=True)
+
+# Create selection function on plot
 size_options = st.multiselect(
     "Select Institution Sizes to Display:",
     options=sr_df['Size'].unique(),
     default=sr_df['Size'].unique()
 )
 
+#Filter based on user selection 
 filtered_schools = sr_df[sr_df['Size'].isin(size_options)]
-
-# Filter top 25 school from the dataset 
-#st.write(top_schools)
 
 #plot 
 st.subheader("Employment Reputation and Outcomes by Institution Size")
