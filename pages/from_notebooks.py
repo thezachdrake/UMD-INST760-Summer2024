@@ -107,18 +107,24 @@ sr_df = df.copy()
 st.subheader("Shanikka Richardson")
 st.write("**Employment Reputation and Outcomes by Institution Size**")
 
+size_options = st.multiselect(
+    "Select Institution Sizes to Display:",
+    options=top_schools['Size'].unique(),
+    default=top_schools['Size'].unique()
+)
+
+filtered_schools = top_schools[top_schools['Size'].isin(size_options)]
+
 # Filter top 25 school from the dataset 
-top_schools = sr_df.head(25)
-st.write(top_schools)
+#st.write(top_schools)
 
 #plot 
 st.subheader("Employment Reputation and Outcomes by Institution Size")
 st.scatter_chart(
-    data=top_schools,
+    data=filtered_schools,
     x='Employer Reputation',
     y='Employment Outcomes',
     color="Size",
-    size="Size",
     width=700,
     height=400,
     use_container_width=True
