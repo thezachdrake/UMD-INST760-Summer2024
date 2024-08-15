@@ -108,12 +108,12 @@ st.subheader("Shanikka Richardson")
 st.write("**Research**")
 
 top_schools = sr_df.head(25)
-st.scatter_chart(
-    data=top_schools,
-    x='employer_reputation',
-    y='employment_outcomes',
-    x_label='Employer Reputation',
-    y_label='Employment Outcomes',
-    use_container_width=True
-)
+top_schools
+
+sns.scatterplot(data=top_schools, x='employer_reputation', y='employment_outcomes', hue='size')
+plt.title('Relationship between Employer Reputation and Employment Outcomes')
+plt.legend(title='Institutions', loc='upper left', bbox_to_anchor=(1, 1), fontsize='small', frameon=True)
+plt.xlabel('Employer Reputation')
+plt.ylabel('Employment Outcomes')
+plt.show()
 
