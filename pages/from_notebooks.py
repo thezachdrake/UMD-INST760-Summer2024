@@ -125,6 +125,7 @@ st.scatter_chart(
     x='Employer Reputation',
     y='Employment Outcomes',
     color='Size',
+    size='Size',
     width=700,
     height=400,
     use_container_width=True
