@@ -115,8 +115,8 @@ st.write(top_schools)
 st.subheader("Employment Reputation and Outcomes by Institution Size")
 st.scatter_chart(
     data=sr_df,
-    x='employer_reputation',
-    y='employment_outcomes',
+    x='Employer Reputation',
+    y='Employment Outcomes',
     width=700,
     height=400,
     use_container_width=True
