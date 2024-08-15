@@ -111,6 +111,12 @@ st.write("**Employment Reputation and Outcomes by Institution Size**")
 sr_size_order = ['S', 'M', 'L', 'XL']
 sr_df['Size'] = pd.Categorical(sr_df['Size'], categories=sr_size_order, ordered=True)
 
+# Color and Size Map
+sr_color_map = {'S': '#FF6347', 'M': '#4682B4', 'L': '#32CD32', 'XL': '#FFD700'}  # Example colors
+sr_size_map = {'S': 50, 'M': 100, 'L': 150, 'XL': 200}  # Example sizes
+
+sr_df['Color'] = sr_df['Size'].map(color_map)
+sr_df['Point Size'] = sr_df['Size'].map(size_map)
 
 # Create selection function on plot
 size_options = st.multiselect(
@@ -122,7 +128,7 @@ size_options = st.multiselect(
 #Filter based on user selection 
 filtered_schools = sr_df[sr_df['Size'].isin(size_options)]
 
-#plot 
+#plot in Streamlit
 st.subheader("Employment Reputation and Outcomes by Institution Size")
 st.scatter_chart(
     data=filtered_schools,
@@ -134,5 +140,19 @@ st.scatter_chart(
     height=400,
     use_container_width=True
 )
+
+#plot using  Matplotlib
+fig, ax = plt.subplots()
+for size in size_order:
+    subset = df[df['Size'] == size]
+    ax.scatter(subset['Employer Reputation'], subset['Employment Outcomes'], 
+               s=subset['Point Size'], c=subset['Color'], label=size, alpha=0.6, edgecolors='w', linewidth=0.5)
+
+ax.set_xlabel('Employer Reputation')
+ax.set_ylabel('Employment Outcomes')
+ax.set_title('Customized Scatter Plot')
+ax.legend(title='Size')
+st.pyplot(fig)
 st.divider()
+
 
