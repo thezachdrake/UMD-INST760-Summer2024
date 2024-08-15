@@ -111,11 +111,12 @@ st.write("**Employment Reputation and Outcomes by Institution Size**")
 sr_size_order = ['S', 'M', 'L', 'XL']
 sr_df['Size'] = pd.Categorical(sr_df['Size'], categories=sr_size_order, ordered=True)
 
+
 # Create selection function on plot
 size_options = st.multiselect(
     "Select Institution Sizes to Display:",
-    options=sr_df['Size'].cat.categories.tolist(),
-    default=sr_df['Size'].cat.categories.tolist()
+    options=sr_df['Size'].unique(),
+    default=sr_df['Size'].unique()
 )
 
 #Filter based on user selection 
