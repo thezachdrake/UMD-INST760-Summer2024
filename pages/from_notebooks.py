@@ -143,7 +143,7 @@ st.scatter_chart(
 
 #plot using  Matplotlib
 fig, ax = plt.subplots()
-for size in size_order:
+for size in sr_size_order:
     subset = df[df['Size'] == size]
     ax.scatter(subset['Employer Reputation'], subset['Employment Outcomes'], 
                s=subset['Point Size'], c=subset['Color'], label=size, alpha=0.6, edgecolors='w', linewidth=0.5)
