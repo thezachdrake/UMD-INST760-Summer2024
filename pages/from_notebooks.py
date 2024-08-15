@@ -80,7 +80,8 @@ st.divider()
 # Goutham Patchipulusu
 pg_df = df.copy()
 st.subheader("Goutham Patchipulusu")
-st.text("When deciding where to apply, considering a university’s investment in environmental sustainability is key. It reflects the school’s commitment to the planet and offers students a chance to engage in green initiatives and learn about innovative environmental practices within a forward-thinking community.")
+st.write("**Universities Size & Environmental Impact**")
+st.write("When deciding where to apply, considering a university’s investment in environmental sustainability is key. It reflects the school’s commitment to the planet and offers students a chance to engage in green initiatives and learn about innovative environmental practices within a forward-thinking community.")
 size_mapping = {'S': 1, 'M': 2, 'L': 3, 'XL': 4}
 pg_df['Size Numeric'] = pg_df['Size'].map(size_mapping)
 
