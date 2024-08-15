@@ -108,6 +108,8 @@ st.subheader("Shanikka Richardson")
 st.write("Tell me about your plot")
 
 top_schools = sr_df.head(25)
+top_schools
+
 plt.figure(figsize=(10, 6))
 sns.scatterplot(data=top_schools, x='employer_reputation', y='employment_outcomes', hue='institution_name')
 
