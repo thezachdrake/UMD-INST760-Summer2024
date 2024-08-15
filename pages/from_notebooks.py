@@ -112,14 +112,12 @@ top_schools = sr_df.head(25)
 st.write(top_schools)
 
 #plot 
+st.subheader("Employment Reputation and Outcomes by Institution Size")
 fig, ax = plt.subplots()
-sns.scatterplot(data=top_schools, x='employer_reputation', y='employment_outcomes', hue='size', ax=ax)
-
+sns.scatterplot(data=df, x='employer_reputation', y='employment_outcomes', hue='size', ax=ax)
 ax.set_title('Relationship between Employer Reputation and Employment Outcomes')
 ax.set_xlabel('Employer Reputation')
 ax.set_ylabel('Employment Outcomes')
-ax.legend(title='Institutions', loc='upper left', bbox_to_anchor=(1, 1), fontsize='small', frameon=True)
-
 st.pyplot(fig)
 st.divider()
 
