@@ -120,7 +120,7 @@ filtered_schools = sr_df[sr_df['Size'].isin(size_options)]
 #plot
 st.scatter_chart(
     data=filtered_schools,
-    x='Employer Reputation',
+    x='Academic Reputation',
     y='Employment Outcomes',
     color='Size',
     size='Size',
