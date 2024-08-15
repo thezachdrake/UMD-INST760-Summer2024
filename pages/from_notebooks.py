@@ -105,8 +105,7 @@ st.divider()
 # Shanikka Richardson
 sr_df = df.copy()
 st.subheader("Shanikka Richardson")
-st.text("Tell me about your plot")
-st.divider()
+st.write("Tell me about your plot")
 
 top_schools = df.head(25)
 top_schools
@@ -117,3 +116,5 @@ plt.legend(title='Institutions', loc='upper left', bbox_to_anchor=(1, 1), fontsi
 plt.xlabel('Employer Reputation')
 plt.ylabel('Employment Outcomes')
 plt.show()
+
+st.divider()
