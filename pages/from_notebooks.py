@@ -119,7 +119,6 @@ plt.legend(title='Institutions', loc='upper left', bbox_to_anchor=(1, 1), fontsi
 plt.xlabel('Employer Reputation')
 plt.ylabel('Employment Outcomes')
 st.pyplot(fig)
-plt.show()
 
 #plt.show()
 
