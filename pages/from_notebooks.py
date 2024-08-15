@@ -76,3 +76,27 @@ plt.xticks(rotation=40)
 plt.yticks(rotation=0)
 st.pyplot(fig)
 st.divider()
+
+# Goutham Patchipulusu
+pg_df = df.copy()
+st.subheader("Goutham Patchipulusu")
+st.text("When deciding where to apply, considering a university’s investment in environmental sustainability is key. It reflects the school’s commitment to the planet and offers students a chance to engage in green initiatives and learn about innovative environmental practices within a forward-thinking community.")
+size_mapping = {'S': 1, 'M': 2, 'L': 3, 'XL': 4}
+pg_df['size_numeric'] = pg_df['size'].map(size_mapping)
+
+fig=plt.figure()
+ax = sns.barplot(x='size_numeric', y='sustainability', hue='size', data=pg_df, palette='Set2')
+
+for p in ax.patches:
+    ax.annotate(format(p.get_height(),'.1f'), (p.get_x() + p.get_width() / 2., p.get_height()), ha = 'center', va = 'center', xytext = (0, 9),
+                textcoords = 'offset points', fontsize=10, color='black')
+
+ax.set_xlabel('University Size')
+ax.set_ylabel('Sustainability Score')
+ax.set_title('University Size vs. Sustainability Score')
+
+size_labels = ['', '', '', '']
+ax.set_xticks([1, 2, 3, 4])
+ax.set_xticklabels(size_labels)
+st.pyplot(fig)
+st.divider()
