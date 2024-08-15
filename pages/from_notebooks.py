@@ -117,6 +117,7 @@ st.scatter_chart(
     data=top_schools,
     x='Employer Reputation',
     y='Employment Outcomes',
+    color="Size",
     width=700,
     height=400,
     use_container_width=True
