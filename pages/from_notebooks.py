@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import plotly.express as px
 
 df = pd.read_csv("notebooks/data.csv")
 
@@ -104,6 +103,7 @@ st.pyplot(fig)
 st.divider()
 
 # Shanikka Richardson
+import plotly.express as px
 sr_df = df.copy()
 st.subheader("Shanikka Richardson")
 st.write("**Academic Reputation and Employment Outcomes by Institution Size**")
