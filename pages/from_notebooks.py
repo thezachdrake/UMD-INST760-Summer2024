@@ -101,3 +101,19 @@ ax.set_xticks([1, 2, 3, 4])
 ax.set_xticklabels(size_labels)
 st.pyplot(fig)
 st.divider()
+
+# Shanikka Richardson
+sr_df = df.copy()
+st.subheader("Shanikka Richardson")
+st.text("Tell me about your plot")
+st.divider()
+
+top_schools = df.head(25)
+top_schools
+
+sns.scatterplot(data=top_schools, x='employer_reputation', y='employment_outcomes', hue='institution_name')
+plt.title('Relationship between Employer Reputation and Employment Outcomes')
+plt.legend(title='Institutions', loc='upper left', bbox_to_anchor=(1, 1), fontsize='small', frameon=True)
+plt.xlabel('Employer Reputation')
+plt.ylabel('Employment Outcomes')
+plt.show()
