@@ -107,6 +107,7 @@ st.divider()
 sr_df = df.copy()
 st.subheader("Shanikka Richardson")
 st.write("**Academic Reputation and Employment Outcomes by Institution Size**")
+st.write("*Selecting a university can be overwhelming for graduating HS seniors.*")
 
 # Create selection function on plot
 size_options = st.multiselect(
