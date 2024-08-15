@@ -122,14 +122,14 @@ size_options = st.multiselect(
 #Filter based on user selection 
 filtered_schools = sr_df[sr_df['Size'].isin(size_options)]
 
-#plot in Streamlit
+#plot 
 st.subheader("Employment Reputation and Outcomes by Institution Size")
 st.scatter_chart(
     data=filtered_schools,
     x='Employer Reputation',
     y='Employment Outcomes',
     color='Size',
-    size=None,
+    size='Size',
     width=700,
     height=400,
     use_container_width=True
