@@ -142,17 +142,17 @@ st.scatter_chart(
 )
 
 #plot using  Matplotlib
-fig, ax = plt.subplots()
-for size in sr_size_order:
+#fig, ax = plt.subplots()
+#for size in sr_size_order:
     subset = sr_df[sr_df['Size'] == size]
     ax.scatter(subset['Employer Reputation'], subset['Employment Outcomes'], 
                s=subset['Point Size'], c=subset['Color'], label=size, alpha=0.6, edgecolors='w', linewidth=0.5)
 
-ax.set_xlabel('Employer Reputation')
-ax.set_ylabel('Employment Outcomes')
-ax.set_title('Customized Scatter Plot')
-ax.legend(title='Size')
-st.pyplot(fig)
+# ax.set_xlabel('Employer Reputation')
+# ax.set_ylabel('Employment Outcomes')
+# ax.set_title('Customized Scatter Plot')
+# ax.legend(title='Size')
+# st.pyplot(fig)
 st.divider()
 
 
