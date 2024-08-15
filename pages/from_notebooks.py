@@ -108,8 +108,8 @@ st.subheader("Shanikka Richardson")
 st.write("**Employment Reputation and Outcomes by Institution Size**")
 
 # Order by size
-size_order = ['S', 'M', 'L', 'XL']
-sr_df['Size'] = pd.Categorical(sr_df['Size'], categories=size_order, ordered=True)
+#size_order = ['S', 'M', 'L', 'XL']
+#sr_df['Size'] = pd.Categorical(sr_df['Size'], categories=size_order, ordered=True)
 
 # Create selection function on plot
 size_options = st.multiselect(
