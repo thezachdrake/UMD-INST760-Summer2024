@@ -105,7 +105,7 @@ st.divider()
 # Shanikka Richardson
 sr_df = df.copy()
 st.subheader("Shanikka Richardson")
-st.write("**Research**")
+st.write("**Employment Reputation and Outcomes by Institution Size**")
 
 # Filter top 25 school from the dataset 
 top_schools = sr_df.head(25)
@@ -122,3 +122,4 @@ ax.legend(title='Institutions', loc='upper left', bbox_to_anchor=(1, 1), fontsiz
 
 st.pyplot(fig)
 st.divider()
+
