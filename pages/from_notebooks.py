@@ -115,8 +115,8 @@ sr_df['Size'] = pd.Categorical(sr_df['Size'], categories=sr_size_order, ordered=
 sr_color_map = {'S': '#FF6347', 'M': '#4682B4', 'L': '#32CD32', 'XL': '#FFD700'}  # Example colors
 sr_size_map = {'S': 50, 'M': 100, 'L': 150, 'XL': 200}  # Example sizes
 
-sr_df['Color'] = sr_df['Size'].map(color_map)
-sr_df['Point Size'] = sr_df['Size'].map(size_map)
+sr_df['Color'] = sr_df['Size'].map(sr_color_map)
+sr_df['Point Size'] = sr_df['Size'].map(sr_size_map)
 
 # Create selection function on plot
 size_options = st.multiselect(
