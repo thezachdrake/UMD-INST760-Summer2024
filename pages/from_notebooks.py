@@ -113,11 +113,13 @@ st.write(top_schools)
 
 #plot 
 st.subheader("Employment Reputation and Outcomes by Institution Size")
-fig=plt.figure()
-sns.scatterplot(data=df, x='employer_reputation', y='employment_outcomes', hue='size', ax=ax)
-ax.set_title('Relationship between Employer Reputation and Employment Outcomes')
-ax.set_xlabel('Employer Reputation')
-ax.set_ylabel('Employment Outcomes')
-st.pyplot(fig)
+st.scatter_chart(
+    data=top_schools,
+    x='employer_reputation',
+    y='employment_outcomes',
+    width=700,
+    height=400,
+    use_container_width=True
+)
 st.divider()
 
