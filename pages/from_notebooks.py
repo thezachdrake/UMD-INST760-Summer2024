@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 df = pd.read_csv("notebooks/data.csv")
 
@@ -129,5 +130,37 @@ st.scatter_chart(
     use_container_width=True
 )
 st.divider()
+fig = px.scatter(
+    filtered_schools,
+    x='Academic Reputation',
+    y='Employment Outcomes',
+    color='Size',
+    size='Size',  # Optional: If 'Size' is a numerical column that represents size
+    title='Academic Reputation vs Employment Outcomes by Institution Size',
+    labels={
+        'Academic Reputation': 'Academic Reputation',
+        'Employment Outcomes': 'Employment Outcomes'
+    },
+    height=400,
+    width=700
+)
+
+# Customize the legend and other plot aspects if needed
+fig.update_layout(
+    legend_title_text='Institution Size',
+    legend=dict(
+        x=0.8,
+        y=0.5,
+        bgcolor='rgba(255, 255, 255, 0.5)',
+        bordercolor='Black',
+        borderwidth=2
+    ),
+    xaxis_title='Academic Reputation',
+    yaxis_title='Employment Outcomes'
+)
+
+# Display the Plotly plot in Streamlit
+st.plotly_chart(fig, use_container_width=True)
+
 
 
