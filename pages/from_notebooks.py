@@ -119,7 +119,6 @@ st.scatter_chart(
     y='Employment Outcomes',
     color="Size",
     size="Size",
-    order=(['S', 'M', 'L', 'XL']),
     width=700,
     height=400,
     use_container_width=True
