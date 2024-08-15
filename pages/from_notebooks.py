@@ -109,16 +109,16 @@ st.write("**Research**")
 
 # Filter top 25 school from the dataset 
 top_schools = sr_df.head(25)
-top_schools
+st.write(top_schools)
 
 #plot 
-fig=plt.figure()
-sns.scatterplot(data=top_schools, x='employer_reputation', y='employment_outcomes', hue='size')
-plt.title('Relationship between Employer Reputation and Employment Outcomes')
-plt.legend(title='Institutions', loc='upper left', bbox_to_anchor=(1, 1), fontsize='small', frameon=True)
-plt.xlabel('Employer Reputation')
-plt.ylabel('Employment Outcomes')
+fig, ax = plt.subplots()
+sns.scatterplot(data=top_schools, x='employer_reputation', y='employment_outcomes', hue='size', ax=ax)
+
+ax.set_title('Relationship between Employer Reputation and Employment Outcomes')
+ax.set_xlabel('Employer Reputation')
+ax.set_ylabel('Employment Outcomes')
+ax.legend(title='Institutions', loc='upper left', bbox_to_anchor=(1, 1), fontsize='small', frameon=True)
+
 st.pyplot(fig)
-
-#plt.show()
-
+st.divider()
