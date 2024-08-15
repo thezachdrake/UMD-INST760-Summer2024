@@ -117,8 +117,7 @@ size_options = st.multiselect(
 #Filter based on user selection 
 filtered_schools = sr_df[sr_df['Size'].isin(size_options)]
 
-#plot 
-st.subheader("Employment Reputation and Outcomes by Institution Size")
+#plot
 st.scatter_chart(
     data=filtered_schools,
     x='Employer Reputation',
