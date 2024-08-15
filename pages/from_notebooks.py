@@ -110,6 +110,7 @@ st.write("Tell me about your plot")
 top_schools = df.head(25)
 plt.figure(figsize=(10, 6))
 sns.scatterplot(data=top_schools, x='employer_reputation', y='employment_outcomes', hue='institution_name')
+
 plt.title('Relationship between Employer Reputation and Employment Outcomes')
 plt.xlabel('Employer Reputation')
 plt.ylabel('Employment Outcomes')
