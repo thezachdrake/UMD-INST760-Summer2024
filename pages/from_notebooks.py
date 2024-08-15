@@ -105,7 +105,7 @@ st.divider()
 # Shanikka Richardson
 sr_df = df.copy()
 st.subheader("Shanikka Richardson")
-st.write("**Employment Reputation and Outcomes by Institution Size**")
+st.write("**Academic Reputation and Employment Outcomes by Institution Size**")
 
 # Create selection function on plot
 size_options = st.multiselect(
