@@ -142,7 +142,7 @@ st.write("My explanation will go here soon")
 
 # plot
 fig=plt.figure()
-df_jh["isUS"] = df_jh.location == "US"
+# df_jh["isUS"] = df_jh.location == "US"
 
 
 # plotSustainabilityScores = sns.boxplot(data=jh_df,x='sustainability',y='size')
