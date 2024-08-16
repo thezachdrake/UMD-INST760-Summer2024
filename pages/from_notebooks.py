@@ -137,17 +137,7 @@ st.divider()
 jh_df = df.copy()
 st.subheader("Josh Hochman")
 st.write("**A deeper dive into Sustainability as a deciding factor in university selection**")
-st.write("My explanation will go here soon")
-
-# kp_df = df.copy()
-# st.subheader("Kristen Purvis")
-# st.write("Our prospective student would like to know if institution size influence international research networks. The student is interested in research and possibly an internship in an international location. In general, the larger the institution, the larger the research network.")
-# fig=plt.figure()
-# sns.barplot(x= "International Research Network", y="Size", hue="Size", data=kp_df, order=['S', 'M', 'L', 'XL'], ci=None)
-# st.pyplot(fig)
-# st.divider()
-
-
+st.write("Let's look at sustainability a bit more. I'm assuming our student really wants to go to a school that's invested in sustainability. We want to see if larger schools are better ranked on sustainability than smaller schools. Let’s look at plots for each of the four sizes, side by side. We want to look at their sustainability scores within each size category, and see if the average sustainability score / spread is better for a particular size category.")
 
 # plot
 jh_df['domestic_schools'] = jh_df['Location'] == 'US'
@@ -155,6 +145,9 @@ fig=plt.figure()
 chicken = sns.boxplot(x="Sustainability",y="Size",data=jh_df,order=['S', 'M', 'L', 'XL'])
 chicken.set_title("Sustainability Scores Based on School Size")
 st.pyplot(fig)
+
+# commentary for first plot
+st.write("Aha! It appears that the median sustainability score tends to be much lower at small and medium sized schools. 75% of medium schools had a sustainability score below 20, though there are many outliers. Large and XL sized schools have a greater spread in their data, but we can see that their median sustainability scores are 10 points higher, and almost half of their scores are over 20 points higher!")
 
 fig=plt.figure()
 # sns.boxplot(data=df,x='Sustainability',y='Size',hue='domestic_schools')
