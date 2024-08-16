@@ -136,9 +136,13 @@ st.divider()
 
 jh_df = df.copy()
 st.subheader("Josh Hochman")
-st.text("Tell me about your plot")
-
 st.write("**A deeper dive into Sustainability as a deciding factor in university selection**")
+
+# plot
+
+plotSustainabilityScores = sns.boxplot(data=jh_df,x='sustainability',y='size')
+plotSustainabilityScores.set_title("Sustainability Scores Based on School Size")
+plotSustainabilityScores.set(xlabel="Sustainability Score",ylabel="Size Class")
 
 
 st.divider()
