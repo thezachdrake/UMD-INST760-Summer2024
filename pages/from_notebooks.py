@@ -157,7 +157,8 @@ st.pyplot(fig)
 
 fig=plt.figure()
 # sns.boxplot(data=df,x='Sustainability',y='Size',hue='domestic_schools')
-sns.boxplot(x="Sustainability",y="Size",hue='domestic_schools',data=jh_df)
+sns.boxplot(x="Sustainability",y="Size",hue="domestic_schools",data=jh_df)
+st.pyplot(fig)
 
 # plotSustainabilityScores2.set_title("Sustainability Scores Based on School Size")
 # plotRankChanges.set_xticklabels(["Outside of the US","Within the US"])
