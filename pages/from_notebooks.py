@@ -141,8 +141,8 @@ st.write("**A deeper dive into Sustainability as a deciding factor in university
 # plot
 
 plotSustainabilityScores = sns.boxplot(data=jh_df,x='sustainability',y='size')
-plotSustainabilityScores.set_title("Sustainability Scores Based on School Size")
-plotSustainabilityScores.set(xlabel="Sustainability Score",ylabel="Size Class")
+# plotSustainabilityScores.set_title("Sustainability Scores Based on School Size")
+# plotSustainabilityScores.set(xlabel="Sustainability Score",ylabel="Size Class")
 
 
 st.divider()
