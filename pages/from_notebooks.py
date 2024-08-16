@@ -153,11 +153,13 @@ st.write("My explanation will go here soon")
 jh_df['domestic_schools'] = jh_df['Location'] == 'US'
 fig=plt.figure()
 sns.boxplot(x="Sustainability",y="Size",data=jh_df)
+fig.set_title("Sustainability Scores Based on School Size")
 st.pyplot(fig)
 
 fig=plt.figure()
 # sns.boxplot(data=df,x='Sustainability',y='Size',hue='domestic_schools')
 sns.boxplot(x="Sustainability",y="Size",hue="domestic_schools",data=jh_df)
+fig.set_title("Sustainability Scores Based on School Size AND Location")
 st.pyplot(fig)
 
 # plotSustainabilityScores2.set_title("Sustainability Scores Based on School Size")
