@@ -141,7 +141,7 @@ st.write("My explanation will go here soon")
 
 
 # plot
-domestic_schools = jh_df['Location'] == 'US'
+jh_df['domestic_schools'] = jh_df['Location'] == 'US'
 fig=plt.figure()
 sns.boxplot(data='jh_df',x='sustainability',y='size')
 
