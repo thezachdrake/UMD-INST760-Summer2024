@@ -134,5 +134,8 @@ st.divider()
 
 # Josh Hochman
 
+jh_df = df.copy()
+st.subheader("Josh Hochman")
+st.text("Tell me about your plot")
 st.divider()
 
