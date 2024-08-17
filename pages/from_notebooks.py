@@ -142,7 +142,7 @@ st.write("Let's look at sustainability a bit more. I'm assuming our student real
 # First plot
 jh_df['domestic_schools'] = jh_df['Location'] == 'US'
 fig=plt.figure()
-chicken = sns.boxplot(x="Sustainability",y="Size",data=jh_df,order=['S', 'M', 'L', 'XL'],hue="red")
+chicken = sns.boxplot(x="Sustainability",y="Size",data=jh_df,order=['S', 'M', 'L', 'XL'])
 chicken.set_title("Sustainability Scores Based on School Size")
 st.pyplot(fig)
 
