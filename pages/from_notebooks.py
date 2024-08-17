@@ -139,16 +139,18 @@ st.subheader("Josh Hochman")
 st.write("**A deeper dive into Sustainability as a deciding factor in university selection**")
 st.write("Let's look at sustainability a bit more. I'm assuming our student really wants to go to a school that's invested in sustainability. We want to see if larger schools are better ranked on sustainability than smaller schools. Let’s look at plots for each of the four sizes, side by side. We want to look at their sustainability scores within each size category, and see if the average sustainability score / spread is better for a particular size category.")
 
-# plot
+# First plot
 jh_df['domestic_schools'] = jh_df['Location'] == 'US'
 fig=plt.figure()
 chicken = sns.boxplot(x="Sustainability",y="Size",data=jh_df,order=['S', 'M', 'L', 'XL'])
 chicken.set_title("Sustainability Scores Based on School Size")
 st.pyplot(fig)
 
-# commentary for first plot
+# Commentary for first plot
 st.write("Aha! It appears that the median sustainability score tends to be much lower at small and medium sized schools. 75% of medium schools had a sustainability score below 20, though there are many outliers. Large and XL sized schools have a greater spread in their data, but we can see that their median sustainability scores are 10 points higher, and almost half of their scores are over 20 points higher!")
 st.write("What about when we compare the domestic vs. international options again?")
+
+# Second plot
 
 fig=plt.figure()
 # sns.boxplot(data=df,x='Sustainability',y='Size',hue='domestic_schools')
@@ -156,12 +158,9 @@ squirrel = sns.boxplot(x="Sustainability",y="Size",hue="domestic_schools",data=j
 squirrel.set_title("Sustainability Scores Based on School Size AND Location")
 st.pyplot(fig)
 
-# commentary for second plot
+# Commentary for second plot
 st.write("Oh my! While we see similarity in the median US/OUS values within each size class, there's a very clear difference in the XL schools. It looks like if you've got your heart set on a very large school that values sustainability, you're going to do much better with the US schools; their data is centered on a much higher median and average for the sustainability score.")
 
-# plotSustainabilityScores2.set_title("Sustainability Scores Based on School Size")
-# plotRankChanges.set_xticklabels(["Outside of the US","Within the US"])
-# plotSustainabilityScores2.set(xlabel="Sustainability Score",ylabel="Size Class")
-
+# Bottom divider
 st.divider()
 
