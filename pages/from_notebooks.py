@@ -198,8 +198,8 @@ st.subheader("Savannah McNair")
 st.text("This plot will create a correlation matrix of the numerical variables in this dataset to explore the correlations and potential relationships between variables for further investigation.")
 
 # define columns of interest
-cols = ['academic_reputation','employer_reputation','faculty_student','citations_per_faculty','international_faculty','international_students','international_research_network','employment_outcomes','sustainability','qs_overall_score']
-df_corr = sm_df[cols]
+#cols = ['academic_reputation','employer_reputation','faculty_student','citations_per_faculty','international_faculty','international_students','international_research_network','employment_outcomes','sustainability','qs_overall_score']
+#df_corr = sm_df[cols]
 
 # remove NAs and convert to float to create corr matrix
 #for col in cols:
