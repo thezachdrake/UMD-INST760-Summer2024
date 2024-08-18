@@ -243,6 +243,7 @@ st.divider()
 # Sue McCarty
 sgm_df = df.copy()
 st.subheader("Sue McCarty")
-st.text("This plot shows the spending on sustainability by colleges, broken down by school size.")
+st.text("This plot shows the spending on sustainability by colleges")
+st.text("broken down by school size. A student interested in sustainability would prefer a larger school.")
 sns.catplot(data=sgm_df, x="Size", y="Sustainability", order=["S", "M", "L", "XL"], hue="Size")
 st.divider()
