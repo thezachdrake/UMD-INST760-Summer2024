@@ -191,3 +191,9 @@ plt.ylabel("Universities")
 st.pyplot(plt)
 
 st.divider()
+
+# Savannah McNair
+sm_df = df.copy()
+st.subheader("Savannah McNair")
+st.text("Tell me about your plot")
+st.divider()
