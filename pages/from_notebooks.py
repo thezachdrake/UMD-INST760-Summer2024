@@ -199,8 +199,7 @@ st.text("This plot will create a correlation matrix of the numerical variables i
 
 # define columns of interest
 cols = ['academic_reputation','employer_reputation','faculty_student','citations_per_faculty','international_faculty','international_students','international_research_network','employment_outcomes','sustainability','qs_overall_score']
-df_corr = df[cols]
-df_corr_copy = df_corr
+df_corr = sm_df[cols]
 
 # remove NAs and convert to float to create corr matrix
 for col in cols:
