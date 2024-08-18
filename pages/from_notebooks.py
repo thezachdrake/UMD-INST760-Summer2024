@@ -183,7 +183,7 @@ if st.checkbox("Show the Raw Data"):
 
 st.subheader("Bar plot of the Rank Changes")
 plt.figure(figsize=(16,8))
-sns.barplot(x='rank_change', y='institution_name', data=top_20_uni, palette='viridis')
+sns.barplot(x='rank_change', y='Institution Name', data=top_20_uni, palette='viridis')
 plt.title('Changes in Rankings from 2024 to 2025 for Top 20 universities')
 plt.xlabel('Rank Change')
 plt.ylabel("Universities")
