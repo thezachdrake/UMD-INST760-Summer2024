@@ -189,5 +189,4 @@ plt.ylabel("Universities")
 
 st.pyplot(plt)
 
-
 st.divider()
