@@ -11,13 +11,6 @@ st.subheader("Your Name")
 st.text("Tell me about your plot")
 st.divider()
 
-
-# Sandra Staub
-ss_df = df.copy()
-st.subheader("Sandra Staub")
-st.text("Tell me about your plot")
-st.divider()
-
 # Andrea Murano
 am_df = df.copy()
 st.subheader("Andrea Murano")
