@@ -155,7 +155,7 @@ st.write("What about when we compare domestic vs. international options again?")
 
 fig=plt.figure()
 # sns.boxplot(data=df,x='Sustainability',y='Size',hue='domestic_schools')
-squirrel = sns.boxplot(x="Sustainability",y="Size",hue="domestic_schools",data=jh_df,order=['S', 'M', 'L', 'XL'],legend="auto")
+squirrel = sns.boxplot(x="Sustainability",y="Size",hue="domestic_schools",data=jh_df,order=['S', 'M', 'L', 'XL'],legend="auto",width=0.7)
 squirrel.set_title("Sustainability Scores Based on School Size AND Location")
 squirrel.set(xlabel="Sustainability Score",ylabel="Size Class")
 st.pyplot(fig)
