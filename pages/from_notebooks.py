@@ -197,7 +197,7 @@ import numpy as np
 
 smm_df = df.copy()
 st.subheader("Savannah McNair")
-st.text("This plot will create a correlation matrix of the numerical variables in this dataset to explore the correlations and potential relationships between variables for further investigation.")
+st.text("This plot will create a correlation matrix of the numerical variables in this dataset to explore the correlations and potential relationships between variables for further investigation. To aid in investigating which relationships might be useful to look into, I will also add a slider tool to allow the user to select a threshold above which correlations will be highlighted.")
 
 # define columns of interest
 cols = ['Academic Reputation','Employer Reputation','Faculty Student','Citations per Faculty','International Faculty','International Students','International Research Network','Employment Outcomes','Sustainability','QS Overall Score']
@@ -213,9 +213,26 @@ df_no_nas = df_corr_num[cols].corr()
 
 # plot corr matrix
 # update color palette to be reverse rocket for more color range
+#fig, ax = plt.subplots(figsize=(10, 8))
+#sns.heatmap(df_no_nas, cmap='rocket_r', annot=True, fmt=".2f", ax=ax)
+#plt.title("Correlation Matrix of Numerical Variables")
+
+#st.pyplot(fig)
+
+#add in a user selected slider widget
+threshold = st.slider('Select Correlation Threshold', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
+
+#mask values below user selected threshold
+mask = np.abs(df_no_nas) < threshold
+
+#filtered df
+filtered_corr = df_no_nas.copy()
+filtered_corr[mask] = np.nan
+
+#plot filtered df corr matrix
 fig, ax = plt.subplots(figsize=(10, 8))
-sns.heatmap(df_no_nas, cmap='rocket_r', annot=True, fmt=".2f", ax=ax)
-plt.title("Correlation Matrix of Numerical Variables")
+sns.heatmap(filtered_corr, cmap='rocket_r', annot=True, fmt=".2f", ax=ax, vmin=-1, vmax=1, annot_kws={"size":10}, linewidths=0.5, linecolor='black')
+plt.title(f"Filtered Correlation Matrix (Threshold: {threshold})")
 
 st.pyplot(fig)
 
