@@ -168,8 +168,8 @@ st.divider()
 # Nuwan Hewabethmage
 nch_df = df.copy()
 st.subheader("Nuwan Hewabethmage")
-nch_df["2024 Rank"] = pd.to_numeric(nch_df["2024 Rank"])
-nch_df["2025 Rank"] = pd.to_numeric(nch_df["2025 Rank"])
+nch_df["2024 Rank"] = pd.to_numeric(nch_df["2024 Rank"],  errors='coerce')
+nch_df["2025 Rank"] = pd.to_numeric(nch_df["2025 Rank"],  errors='coerce')
 
 # in the viualization I focused on the top 20 Universities 
 top_20_uni = nch_df(20).copy()
