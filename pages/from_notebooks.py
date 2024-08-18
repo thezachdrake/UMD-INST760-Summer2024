@@ -148,7 +148,7 @@ st.pyplot(fig)
 
 # Commentary for first plot
 st.write("Aha! It appears that the median sustainability score tends to be much lower at small and medium sized schools. 75% of medium schools had a sustainability score below 20, though there are many outliers. Large and XL sized schools have a greater spread in their data, but we can see that their median sustainability scores are 10 points higher, and almost half of their scores are over 20 points higher!")
-st.write("What about when we compare the domestic vs. international options again?")
+st.write("What about when we compare domestic vs. international options again?")
 
 # Second plot
 
