@@ -168,12 +168,12 @@ st.divider()
 # Nuwan Hewabethmage
 nch_df = df.copy()
 st.subheader("Nuwan Hewabethmage")
-nch_df['2024_rank'] = pd.to_numeric(nch_df['2024_rank'], errors= 'coerce')
-nch_df['2025_rank'] = pd.to_numeric(nch_df['2025_rank'], errors= 'coerce')
+nch_df["2024 Rank"] = pd.to_numeric(nch_df["2024 Rank"])
+nch_df["2025 Rank"] = pd.to_numeric(nch_df["2025 Rank"])
 
 # in the viualization I focused on the top 20 Universities 
 top_20_uni = nch_df(20).copy()
-top_20_uni['rank_change'] = top_20_uni['2024_rank'] - top_20_uni['2025_rank']
+top_20_uni['rank_change'] = top_20_uni["2024 Rank"] - top_20_uni["2025 Rank"]
 st.title("Top 20 Universities Ranking Changes from 2024 to 2025")
 
 # becasuse we are using the stream-lit if we want to show the raw data for the graph we can show this way
