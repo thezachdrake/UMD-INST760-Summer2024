@@ -213,10 +213,10 @@ df_no_nas = df_corr_num[cols].corr()
 
 # plot corr matrix
 # update color palette to be reverse rocket for more color range
-plt.figure(figsize=(10, 8))
-sns.heatmap(df_no_nas, cmap='rocket_r', annot=True, fmt=".2f") 
-
-# title
+fig, ax = plt.subplots(figsize=(10, 8))
+sns.heatmap(df_no_nas, cmap='rocket_r', annot=True, fmt=".2f", ax=ax)
 plt.title("Correlation Matrix of Numerical Variables")
+
+st.pyplot(fig)
 
 st.divider()
