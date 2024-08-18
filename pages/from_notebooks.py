@@ -11,12 +11,6 @@ st.subheader("Your Name")
 st.text("Tell me about your plot")
 st.divider()
 
-# Sandra Staub
-ss_df = df.copy()
-st.subheader("Sandra Staub")
-st.text("Tell me about your plot")
-st.divider()
-
 # Andrea Murano
 am_df = df.copy()
 st.subheader("Andrea Murano")
@@ -249,4 +243,10 @@ st.text("would prefer a larger school.")
 #plot 
 sns.catplot(data=sgm_df, x = "size", y = "sustainability", order= ["S", "M", "L", "XL"], hue="size")
 #the end
+st.divider()
+
+# Sandra Staub
+ss_df = df.copy()
+st.subheader("Sandra Staub")
+st.text("Tell me about your plot")
 st.divider()
