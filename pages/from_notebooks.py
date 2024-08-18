@@ -157,6 +157,7 @@ fig=plt.figure()
 # sns.boxplot(data=df,x='Sustainability',y='Size',hue='domestic_schools')
 squirrel = sns.boxplot(x="Sustainability",y="Size",hue="domestic_schools",data=jh_df,order=['S', 'M', 'L', 'XL'])
 squirrel.set_title("Sustainability Scores Based on School Size AND Location")
+squirrel.set(xlabel="Sustainability Score",ylabel="Size Class")
 st.pyplot(fig)
 
 # Commentary for second plot
