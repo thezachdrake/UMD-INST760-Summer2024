@@ -168,11 +168,12 @@ st.divider()
 # Nuwan Hewabethmage
 nch_df = df.copy()
 st.subheader("Nuwan Hewabethmage")
+st.text("The below graph shows how changes in the Ranking of the top 20 schools")
 nch_df["2024 Rank"] = pd.to_numeric(nch_df["2024 Rank"],  errors='coerce')
 nch_df["2025 Rank"] = pd.to_numeric(nch_df["2025 Rank"],  errors='coerce')
 
 # in the viualization I focused on the top 20 Universities 
-top_20_uni = nch_df(20).copy()
+top_20_uni = nch_df.head(20).copy()
 top_20_uni['rank_change'] = top_20_uni["2024 Rank"] - top_20_uni["2025 Rank"]
 st.title("Top 20 Universities Ranking Changes from 2024 to 2025")
 
