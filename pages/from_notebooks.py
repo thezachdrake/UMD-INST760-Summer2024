@@ -247,6 +247,6 @@ st.text("This plot shows the spending on sustainability by colleges")
 st.text("broken down by school size. A student interested in sustainability") 
 st.text("would prefer a larger school.")
 #plot 
-sns.catplot(data=sgm_df, x="Size", y="Sustainability", order=["S", "M", "L", "XL"], hue="Size")
+sns.catplot(data=sgm_df, x="size", y="sustainability", order=["S", "M", "L", "XL"], hue="size")
 #the end
 st.divider()
