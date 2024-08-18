@@ -198,24 +198,24 @@ st.subheader("Savannah McNair")
 st.text("This plot will create a correlation matrix of the numerical variables in this dataset to explore the correlations and potential relationships between variables for further investigation.")
 
 # define columns of interest
-cols = ['academic_reputation','employer_reputation','faculty_student','citations_per_faculty','international_faculty','international_students','international_research_network','employment_outcomes','sustainability','qs_overall_score']
+cols = ['Academic Reputation','Employer Reputation','Faculty Student','Citations per Faculty','International Faculty','International Students','International Research Network','Employment Outcomes','Sustainability','QS Overall Score']
 smm_df
-#df_corr = smm_df[cols]
+df_corr = smm_df[cols]
 
 # remove NAs and convert to float to create corr matrix
-#for col in cols:
- #   df_corr[col] = pd.to_numeric(df[col].replace('-', np.nan), errors='coerce')
-#df_corr_num = df_corr.dropna()
+for col in cols:
+    df_corr[col] = pd.to_numeric(df[col].replace('-', np.nan), errors='coerce')
+df_corr_num = df_corr.dropna()
 
 # new df for corrs
-#df_no_nas = df_corr_num[cols].corr()
+df_no_nas = df_corr_num[cols].corr()
 
 # plot corr matrix
 # update color palette to be reverse rocket for more color range
-#plt.figure(figsize=(10, 8))
-#sns.heatmap(df_no_nas, cmap='rocket_r', annot=True, fmt=".2f") 
+plt.figure(figsize=(10, 8))
+sns.heatmap(df_no_nas, cmap='rocket_r', annot=True, fmt=".2f") 
 
 # title
-#plt.title("Correlation Matrix of Numerical Variables")
+plt.title("Correlation Matrix of Numerical Variables")
 
 st.divider()
