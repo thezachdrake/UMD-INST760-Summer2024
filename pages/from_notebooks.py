@@ -193,6 +193,8 @@ st.pyplot(plt)
 st.divider()
 
 # Savannah McNair
+import numpy as np
+
 smm_df = df.copy()
 st.subheader("Savannah McNair")
 st.text("This plot will create a correlation matrix of the numerical variables in this dataset to explore the correlations and potential relationships between variables for further investigation.")
