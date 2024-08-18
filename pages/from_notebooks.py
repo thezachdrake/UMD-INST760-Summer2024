@@ -239,3 +239,10 @@ plt.title(f"Filtered Correlation Matrix (Threshold: {threshold})")
 st.pyplot(fig)
 
 st.divider()
+
+# Sue McCarty
+sgm_df = df.copy()
+st.subheader("Sue McCarty")
+st.text("This plot shows the spending on susteinability by colleges, broken down by school size.")
+sns.catplot(data=sgm_df, x="size", y="sustainability", order=["S", "M", "L", "XL"], hue="size")
+st.divider()
