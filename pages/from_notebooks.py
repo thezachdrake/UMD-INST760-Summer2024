@@ -282,7 +282,7 @@ for index, row in points_to_label.iterrows():
     plt.annotate(
         row['Institution Name'],
         xy=(row['Employer Reputation'], row['Employment Outcomes']),
-        xytext=(row['Employer Reputation'] + 2, row['Employment Outcomes'] + 2),
+        xytext=(row['Employer Reputation'] + 5, row['Employment Outcomes'] + 2),
         arrowprops=dict(facecolor='black', arrowstyle="->"),
         fontsize=7,
         ha='right')
