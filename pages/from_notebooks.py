@@ -21,38 +21,33 @@ st.write("The following plots display the correlation between employment outcome
 am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
-fig, axs = plt.subplots(2, 2, figsize=(12, 12))
-
-def create_scatter(x, y, data, ax, title, is_us):
-    cmap = 'YlOrRd' if is_us else 'YlGnBu'
-    scatter = sns.scatterplot(x=x, y=y, data=data, ax=ax, 
-                              hue='QS Overall Score', palette=cmap, 
-                              size='QS Overall Score', sizes=(20, 200), 
-                              legend=False)
-    ax.set_title(title, fontsize=18, color='black', y=1.01, fontweight='bold')
-    ax.set_xlabel('')
-    ax.set_ylabel('')
-    ax.set_facecolor("whitesmoke")
-    return scatter
-
-scatter1 = create_scatter('Employment Outcomes', 'Academic Reputation', am_df[am_US_schools], axs[0, 0], 'US Schools', True)
-scatter2 = create_scatter('Employment Outcomes', 'Academic Reputation', am_df[am_int_schools], axs[0, 1], 'International Schools', False)
-scatter3 = create_scatter('Employment Outcomes', 'Employer Reputation', am_df[am_US_schools], axs[1, 0], '', True)
-scatter4 = create_scatter('Employment Outcomes', 'Employer Reputation', am_df[am_int_schools], axs[1, 1], '', False)
-
-sm_us = plt.cm.ScalarMappable(cmap='YlOrRd', norm=plt.Normalize(vmin=am_df['QS Overall Score'].min(), vmax=am_df['QS Overall Score'].max()))
-sm_int = plt.cm.ScalarMappable(cmap='YlGnBu', norm=plt.Normalize(vmin=am_df['QS Overall Score'].min(), vmax=am_df['QS Overall Score'].max()))
-
-cbar_us = fig.colorbar(sm_us, ax=[axs[0, 0], axs[1, 0]], label='QS Overall Score (US)', orientation='vertical', aspect=50)
-cbar_int = fig.colorbar(sm_int, ax=[axs[0, 1], axs[1, 1]], label='QS Overall Score (International)', orientation='vertical', aspect=50)
-
+fig, axs = plt.subplots(2, 2, figsize=(10, 10))
+sns.regplot(x='Employment Outcomes', y='Academic Reputation', data=am_df[am_US_schools], ax=axs[0, 0], color='cornflowerblue', scatter_kws={'s':10}, line_kws={"color": "navy"})
+axs[0, 0].set_title('US Schools', fontsize=18, color='black', y=1.01, fontweight='bold')
+axs[0, 0].set_xlabel('')
+axs[0, 0].set_ylabel('')
+axs[0, 0].set_facecolor("whitesmoke")
+sns.regplot(x='Employment Outcomes', y='Academic Reputation', data=am_df[am_int_schools], ax=axs[0, 1], color='mediumpurple', scatter_kws={'s':10}, line_kws={"color": "indigo"})
+axs[0, 1].set_title('International Schools', fontsize=18, color='black', y=1.01, fontweight='bold')
+axs[0, 1].set_xlabel('')
+axs[0, 1].set_ylabel('')
+axs[0, 1].set_facecolor("whitesmoke")
+sns.regplot(x='Employment Outcomes', y='Employer Reputation', data=am_df[am_US_schools], ax=axs[1, 0], color='cornflowerblue', scatter_kws={'s':10}, line_kws={"color": "navy"})
+axs[1, 0].set_xlabel('')
+axs[1, 0].set_ylabel('')
+axs[1, 0].set_facecolor("whitesmoke")
+sns.regplot(x='Employment Outcomes', y='Employer Reputation', data=am_df[am_int_schools], ax=axs[1, 1], color='mediumpurple', scatter_kws={'s':10}, line_kws={"color": "indigo"})
+axs[1, 1].set_xlabel('')
+axs[1, 1].set_ylabel('')
+axs[1, 1].set_facecolor("whitesmoke")
 fig.text(0.5, 0.06, 'Employment Outcomes', ha='center', va='center', fontsize=15)
 fig.text(0.07, 0.71, 'Academic Reputation', ha='center', va='center', rotation='vertical', fontsize=15)
 fig.text(0.07, 0.29, 'Employer Reputation', ha='center', va='center', rotation='vertical', fontsize=15)
 
-plt.tight_layout()
+plt.subplots_adjust(wspace=0.3, hspace=0.4)
 st.pyplot(fig)
 st.divider()
+
 
 # Kristen Purvis
 kp_df = df.copy()
