@@ -52,8 +52,7 @@ emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_scho
 
 
 plt.margins(x=0.1, y=0.1)
-plt.subplots_adjust(wspace=0.2, hspace=0.3, bottom=0.2)
-
+plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.2, wspace=0.2, hspace=0.3)
 cbar_ax = fig.add_axes([0.15, 0.11, 0.7, 0.02])
 
 sm = plt.cm.ScalarMappable(cmap='viridis_r', norm=plt.Normalize(vmin=0, vmax=100))
