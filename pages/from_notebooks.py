@@ -20,7 +20,6 @@ st.write("The following plots display the correlation between employment outcome
 
 am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
-am_df['QS Overall Score'] = pd.to_numeric(am_df['QS Overall Score'])
 
 fig, axs = plt.subplots(2, 2, figsize=(16, 16))
 
@@ -39,13 +38,7 @@ def emp_outcome_corr(x, y, data, ax, title, color):
     ax.set_ylabel(y, fontsize=15)
     ax.set_facecolor("whitesmoke")
     
-    norm = plt.Normalize(data['QS Overall Score'].min(), data['QS Overall Score'].max())
-    map = cm.ScalarMappable(norm=norm, cmap='viridis')
 
-    cbar = plt.colorbar(map, ax=ax)
-    cbar.set_label('QS Overall Score', size=15)
-    cbar.set_ticks(np.arange(0, 101, 10))
-    
 emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_US_schools], axs[0, 0], 
                   'US Schools - Academic Reputation', 'navy')
 
