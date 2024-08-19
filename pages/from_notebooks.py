@@ -180,7 +180,7 @@ st.divider()
 # Nuwan Hewabethmage
 nch_df = df.copy()
 st.subheader("Nuwan Hewabethmage")
-st.text("The below graph shows how changes in the Ranking of the top 20 schools. The Universities that does not show in the bar plots, did not change ranking")
+st.write("The below graph shows how changes in the Ranking of the top 20 schools. The Universities that does not show in the bar plots, did not change ranking")
 nch_df["2024 Rank"] = pd.to_numeric(nch_df["2024 Rank"],  errors='coerce')
 nch_df["2025 Rank"] = pd.to_numeric(nch_df["2025 Rank"],  errors='coerce')
 
