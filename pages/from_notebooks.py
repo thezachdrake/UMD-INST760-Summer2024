@@ -27,7 +27,7 @@ def emp_outcome_corr(x, y, data, ax, title, color):
     scatter = sns.scatterplot(x=x, y=y, data=data, 
                                hue='QS Overall Score', palette='Blues', 
                                size='QS Overall Score', sizes=(50, 200), 
-                               alpha=0.7, edgecolor='none', ax=ax)
+                               alpha=0.7, edgecolor='none', ax=ax, legend=False)
     
     sns.regplot(x=x, y=y, data=data, 
                 scatter=False, ax=ax, color=color)
@@ -52,7 +52,10 @@ emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_US_schoo
 emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_schools], axs[1, 1], 
                   'International Schools - Employer Reputation', 'indigo')
 
+plt.tight_layout()
+
 st.pyplot(fig)
+
 st.divider()
 
 # Kristen Purvis
