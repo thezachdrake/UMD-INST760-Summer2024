@@ -348,15 +348,16 @@ st.divider()
 lg_df = df.copy()
 st.subheader("Lillian Getachew")
 st.text("Insert plot desc here")
+
 df1=lg_df.sort_values("2025 Rank")
-df1 = df1.head(20)
+#df1 = df1.head(20)
 plt.figure(figsize=(25, 10))
 
-lg_df['Employer Reputation'] = pd.to_numeric(df['employer_reputation'], errors='coerce').astype('Int64') #turning the rank values to integers
-lg_df['Employment Outcomes'] = pd.to_numeric(df['employment_outcomes'], errors='coerce').astype('Int64') #turning the rank values to integers
-lg_df['QS Overall Score'] = pd.to_numeric(df['qs_overall_score'], errors='coerce').astype('Int64') #turning the rank values to integers
-lg_df['Academic ReputInternational Research Networkation'] = pd.to_numeric(df['qs_overall_score'], errors='coerce').astype('Int64') #turning the rank values to integers
-lg_df['International Research Network'] = pd.to_numeric(df['qs_overall_score'], errors='coerce').astype('Int64') #turning the rank values to integers
+lg_df['Employer Reputation'] = pd.to_numeric(df['Employer Reputation'], errors='coerce').astype('Int64') 
+lg_df['Employment Outcomes'] = pd.to_numeric(df['Employment Outcomes'], errors='coerce').astype('Int64') 
+lg_df['QS Overall Score'] = pd.to_numeric(df['QS Overall Score'], errors='coerce').astype('Int64') 
+lg_df['Academic Reputation'] = pd.to_numeric(df['Academic Reputation'], errors='coerce').astype('Int64') 
+lg_df['International Research Network'] = pd.to_numeric(df['International Research Network'], errors='coerce').astype('Int64') 
 
 #melt the score columns in a new df to be able to compare them
 df_melted = df1.melt(id_vars=["location"], value_vars=[ 'Employment Outcomes',"Employer Reputation","Academic Reputation","International Research Network","QS Overall Score"], var_name='Reputation Type', value_name='Score')
