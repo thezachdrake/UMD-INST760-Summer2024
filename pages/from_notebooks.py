@@ -51,7 +51,6 @@ emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_US_schoo
 emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_schools], axs[1, 1], 
                   'International Schools - Employer Reputation', 'indigo')
 
-fig.tight_layout(pad=3.0)
 plt.subplots_adjust(wspace=0.3, hspace=0.4)
 
 cbar_ax = fig.add_axes([0.15, 0.05, 0.7, 0.02])
