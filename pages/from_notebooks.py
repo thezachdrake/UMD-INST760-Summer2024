@@ -355,16 +355,16 @@ plt.figure(figsize=(25, 10))
 lg_df['Employer Reputation'] = pd.to_numeric(df['employer_reputation'], errors='coerce').astype('Int64') #turning the rank values to integers
 lg_df['Employment Outcomes'] = pd.to_numeric(df['employment_outcomes'], errors='coerce').astype('Int64') #turning the rank values to integers
 lg_df['QS Overall Score'] = pd.to_numeric(df['qs_overall_score'], errors='coerce').astype('Int64') #turning the rank values to integers
-lg_df['Academic Reputation'] = pd.to_numeric(df['qs_overall_score'], errors='coerce').astype('Int64') #turning the rank values to integers
+lg_df['Academic ReputInternational Research Networkation'] = pd.to_numeric(df['qs_overall_score'], errors='coerce').astype('Int64') #turning the rank values to integers
 lg_df['International Research Network'] = pd.to_numeric(df['qs_overall_score'], errors='coerce').astype('Int64') #turning the rank values to integers
 
 #melt the score columns in a new df to be able to compare them
-df_melted = df1.melt(id_vars=["location"], value_vars=[ 'employment_outcomes',"employer_reputation","academic_reputation","international_research_network","qs_overall_score"], var_name='Reputation Type', value_name='Score')
+df_melted = df1.melt(id_vars=["location"], value_vars=[ 'Employment Outcomes',"Employer Reputation","Academic Reputation","International Research Network","QS Overall Score"], var_name='Reputation Type', value_name='Score')
 
 plt.figure(figsize=(25, 10))
 sns.catplot(data=df_melted, kind="bar", x="Reputation Type", y="Score",hue="location", ci=None, palette='viridis')
 plt.xticks(rotation=90)
-plt.ylim(75, 100) #since these are the best school they have hugher scores, it makes sense to start viewing scores above 75 for a better view
+plt.ylim(75, 100) 
 plt.show()
 
 st.divider()
