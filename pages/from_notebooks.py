@@ -251,11 +251,10 @@ st.divider()
 # Sandra Staub
 ss_df = df.copy()
 st.subheader("Sandra Staub")
-st.text("If they are looking for employment in the US after graduation, it makes the most sense to look at US schools, so which ones have the best employer reputation as well as employment outcomes.")
+st.write("If they are looking for employment in the US after graduation, it makes the most ")
+st.write("sense to look at US schools, so which ones have the best employer reputation as well as employment outcomes.")
 ss_df_us = ss_df[ss_df['Location'] == 'US']
-
 sns.set(style="whitegrid")
-
 # Create scatter plot
 plt.figure(figsize=(10, 6))
 sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ss_df_us, hue="Size")
