@@ -337,20 +337,20 @@ st.write("which schools are these in the upper write corner?")
 
 # Create a scatter plot with Plotly
 #fig = px.scatter(ss_df_us, 
-                 x="Employer Reputation", 
-                 y="Employment Outcomes", 
-                 color="size", 
-                 text="Institution Name",
-                 hover_data={
-                     'Employer Reputation': True, 
-                     'Employment Outcomes': True,
-                     'Institution Name': True
-                 })
+#                 x="Employer Reputation", 
+#                 y="Employment Outcomes", 
+#                 color="size", 
+#                text="Institution Name",
+#                 hover_data={
+#                     'Employer Reputation': True, 
+#                     'Employment Outcomes': True,
+#                     'Institution Name': True
+#                })
 
 # Customize hover mode
 #fig.update_traces(marker=dict(size=12),
-                  textposition='top center',
-                  hovertemplate="<b>%{text}</b><br>Employer Reputation: %{x}<br>Employment Outcomes: %{y}<extra></extra>")
+#                 textposition='top center',
+#                 hovertemplate="<b>%{text}</b><br>Employer Reputation: %{x}<br>Employment Outcomes: %{y}<extra></extra>")
 
 # Add a title
 #fig.update_layout(title="US Schools")
