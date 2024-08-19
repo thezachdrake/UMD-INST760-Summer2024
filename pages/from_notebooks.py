@@ -38,8 +38,12 @@ def emp_outcome_corr(x, y, data, ax, title, color):
     ax.set_ylabel(y, fontsize=15)
     ax.set_facecolor("whitesmoke")
     
-    cbar = plt.colorbar(scatter.collections[0], ax=ax, cmap='viridis')
+    norm = plt.Normalize(data['QS Overall Score'].min(), data['QS Overall Score'].max())
+    map = cm.ScalarMappable(norm=norm, cmap='viridis')
+
+    cbar = plt.colorbar(map, ax=ax)
     cbar.set_label('QS Overall Score', size=15)
+    cbar.set_ticks(np.arange(0, 101, 10))
     
 emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_US_schools], axs[0, 0], 
                   'US Schools - Academic Reputation', 'navy')
