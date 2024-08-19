@@ -37,7 +37,8 @@ def emp_outcome_corr(x, y, data, ax, title, color):
     ax.set_ylabel(y, fontsize=15)
     ax.set_facecolor("whitesmoke")
     
- norm = plt.Normalize(0, 100)
+    # Add colorbar
+    norm = plt.Normalize(0, 100)
     sm = plt.cm.ScalarMappable(cmap="viridis", norm=norm)
     sm.set_array([])
     cbar = plt.colorbar(sm, ax=ax, pad=0.02)
