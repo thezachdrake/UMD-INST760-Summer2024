@@ -279,7 +279,15 @@ sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ss_df_us,
 points_to_label = ss_df_us[(ss_df_us['Employer Reputation'] > 95) & (ss_df_us['Employment Outcomes'] > 95)]
 # Add labels
 for index, row in points_to_label.iterrows():
-    plt.text(row['Employer Reputation'], row['Employment Outcomes'], row['Institution Name'], fontsize=5, ha='right')
+    plt.annotate(
+        row['Institution Name'],
+        xy=(row['Employer Reputation'], row['Employment Outcomes']),
+        xytext=(row['Employer Reputation'] + 1, row['Employment Outcomes'] + 1),
+        arrowprops=dict(facecolor='black', arrowstyle="->"),
+        fontsize=9,
+        ha='right')
+# for index, row in points_to_label.iterrows():
+#    plt.text(row['Employer Reputation'], row['Employment Outcomes'], row['Institution Name'], fontsize=5, ha='right')
 
 
 plt.title("US Schools Employer Stats")
