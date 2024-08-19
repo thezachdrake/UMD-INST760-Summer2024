@@ -40,8 +40,7 @@ def emp_outcome_corr(x, y, data, ax, title, color):
     
     cbar = plt.colorbar(scatter.collections[0], ax=ax)
     cbar.set_label('QS Overall Score', size=15)
-    cbar.set_ticks(np.arange(0, 101, 10))
-
+    
 emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_US_schools], axs[0, 0], 
                   'US Schools - Academic Reputation', 'navy')
 
