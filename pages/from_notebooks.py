@@ -328,6 +328,7 @@ plt.title("US Schools Employer Stats")
 st.pyplot(plt)
 
 st.write("which schools are these in the upper write corner?")
+pip install plotly
 
 import plotly.express as px 
 # Filter data
