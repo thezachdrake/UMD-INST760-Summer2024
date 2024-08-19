@@ -252,9 +252,9 @@ st.divider()
 ss_df = df.copy()
 st.subheader("Sandra Staub")
 st.text("If they are looking for employment in the US after graduation, it makes the most sense to look at US schools, so which ones have the best employer_reputation as well as employment_outcomes.")
-df_us = df[df['Location'] == 'US']
+ss_df_us = ss_df[ss_df['Location'] == 'US']
 sns.set(style="whitegrid")
-sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=df_us, hue="Size")
+sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=dd_df_us, hue="Size")
 # Add a title using matplotlib
 plt.title("US Schools Employer Stats")
 st.pyplot()
