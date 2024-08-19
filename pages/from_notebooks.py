@@ -296,16 +296,14 @@ vn_df = df.copy()
 st.subheader("Victoria Nathaniel")
 st.write("Showing the academic reputation, and employment outcomes in USA")
 
-location_us = vn_df['Location'] == 'US'
-fig=plt.figure()
+location_in_us = vn_df[vn_df['Location'] == 'US']
+plt.figure(figsize=(10, 6))
 
-sns.barplot(x='Employment Outcomes', y='Academic Reputation', data=vn_df[location_us], hue='size')
-
+sns.scatterplot(data=location_in_us, x='Employment Outcomes', y='Academic Reputation', hue='size', palette='Set2')
 plt.xlabel('Percentage Employment')
 plt.ylabel('Academic Reputation')
 plt.title('Statistical Representation In USA')
 
-
-st.pyplot(fig)
+st.pyplot(plt)
 st.divider()
 
