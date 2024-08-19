@@ -257,6 +257,7 @@ sns.scatterplot(x="employer eputation", y="employment outcomes", data=df_us, hue
 # Add a title using matplotlib
 plt.title = plt.title
 plt.title("US Schools")
+st.pyplot()
 st.divider()
 
 # Victoria Nathaniel
