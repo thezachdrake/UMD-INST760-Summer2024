@@ -257,7 +257,7 @@ sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=df_us, hu
 # Add a title using matplotlib
 plt.title = plt.title
 plt.title("US Schools Employer Stats")
-st.pyplot(plt)
+plt.show
 st.divider()
 
 
