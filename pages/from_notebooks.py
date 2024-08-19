@@ -349,7 +349,7 @@ lg_df = df.copy()
 st.subheader("Lillian Getachew")
 st.text("Insert plot desc here")
 
-sns.set(style="darkgrid")
+sns.set(style="whitegrid")
 plt.figure(figsize=(25, 10))
 
 lg_df['2025 Rank'] = pd.to_numeric(lg_df['2025 Rank'], errors='coerce').astype('Int64') 
