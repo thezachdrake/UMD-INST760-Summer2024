@@ -21,31 +21,44 @@ st.write("The following plots display the correlation between employment outcome
 am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
-fig, axs = plt.subplots(2, 2, figsize=(10, 10))
-sns.regplot(x='Employment Outcomes', y='Academic Reputation', data=am_df[am_US_schools], ax=axs[0, 0], color='cornflowerblue', scatter_kws={'s':10}, line_kws={"color": "navy"})
-axs[0, 0].set_title('US Schools', fontsize=18, color='black', y=1.01, fontweight='bold')
-axs[0, 0].set_xlabel('')
-axs[0, 0].set_ylabel('')
-axs[0, 0].set_facecolor("whitesmoke")
-sns.regplot(x='Employment Outcomes', y='Academic Reputation', data=am_df[am_int_schools], ax=axs[0, 1], color='mediumpurple', scatter_kws={'s':10}, line_kws={"color": "indigo"})
-axs[0, 1].set_title('International Schools', fontsize=18, color='black', y=1.01, fontweight='bold')
-axs[0, 1].set_xlabel('')
-axs[0, 1].set_ylabel('')
-axs[0, 1].set_facecolor("whitesmoke")
-sns.regplot(x='Employment Outcomes', y='Employer Reputation', data=am_df[am_US_schools], ax=axs[1, 0], color='cornflowerblue', scatter_kws={'s':10}, line_kws={"color": "navy"})
-axs[1, 0].set_xlabel('')
-axs[1, 0].set_ylabel('')
-axs[1, 0].set_facecolor("whitesmoke")
-sns.regplot(x='Employment Outcomes', y='Employer Reputation', data=am_df[am_int_schools], ax=axs[1, 1], color='mediumpurple', scatter_kws={'s':10}, line_kws={"color": "indigo"})
-axs[1, 1].set_xlabel('')
-axs[1, 1].set_ylabel('')
-axs[1, 1].set_facecolor("whitesmoke")
-fig.text(0.5, 0.06, 'Employment Outcomes', ha='center', va='center', fontsize=15)
-fig.text(0.07, 0.71, 'Academic Reputation', ha='center', va='center', rotation='vertical', fontsize=15)
-fig.text(0.07, 0.29, 'Employer Reputation', ha='center', va='center', rotation='vertical', fontsize=15)
+fig, axs = plt.subplots(2, 2, figsize=(16, 16))
 
-plt.subplots_adjust(wspace=0.3, hspace=0.4)
-st.pyplot(fig)
+# Function to create scatter plot with regression line
+def emp_outcome_corr(x, y, data, ax, title, color):
+    scatter = sns.scatterplot(x=x, y=y, data=data, 
+                               hue='QS Score', palette='Blues', 
+                               size='QS Score', sizes=(50, 200), 
+                               alpha=0.7, edgecolor='none', ax=ax)
+    
+    sns.regplot(x=x, y=y, data=data, 
+                scatter=False, ax=ax, color=color)
+    
+    ax.set_title(title, fontsize=18, color='black', y=1.05, fontweight='bold')
+    ax.set_xlabel('Employment Outcomes', fontsize=15)
+    ax.set_ylabel(y, fontsize=15)
+    ax.set_facecolor("whitesmoke")
+    
+    cbar = plt.colorbar(scatter.collections[0], ax=ax, pad=0.02)
+    cbar.set_label('QS Score', rotation=270, labelpad=15)
+
+# US Schools - Academic Reputation
+emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_US_schools], axs[0, 0], 
+                  'US Schools - Academic Reputation', 'navy')
+
+# International Schools - Academic Reputation
+emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_int_schools], axs[0, 1], 
+                  'International Schools - Academic Reputation', 'indigo')
+
+# US Schools - Employer Reputation
+emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_US_schools], axs[1, 0], 
+                  'US Schools - Employer Reputation', 'navy')
+
+# International Schools - Employer Reputation
+emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_schools], axs[1, 1], 
+                  'International Schools - Employer Reputation', 'indigo')
+
+plt.tight_layout()
+plt.show()
 st.divider()
 
 
