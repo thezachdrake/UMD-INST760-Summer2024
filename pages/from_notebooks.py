@@ -256,8 +256,8 @@ df_us = df[df['Location'] == 'US']
 sns.set(style="whitegrid")
 sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=df_us, hue="Size")
 # Add a title using matplotlib
-plt.title = plt.title
 plt.title("US Schools Employer Stats")
+st.pyplot()
 st.divider()
 
 
