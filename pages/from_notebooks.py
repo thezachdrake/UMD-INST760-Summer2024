@@ -40,16 +40,16 @@ def emp_outcome_corr(x, y, data, ax, title, color):
     
 
 emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_US_schools], axs[0, 0], 
-                  'US Schools - Academic Reputation', 'navy')
+                  'US Schools', 'navy')
 
 emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_int_schools], axs[0, 1], 
-                  'International Schools - Academic Reputation', 'indigo')
+                  'International Schools', 'indigo')
 
 emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_US_schools], axs[1, 0], 
-                  'US Schools - Employer Reputation', 'navy')
+                  '', 'navy')
 
 emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_schools], axs[1, 1], 
-                  'International Schools - Employer Reputation', 'indigo')
+                  '', 'indigo')
 
 plt.subplots_adjust(wspace=0.3, hspace=0.4)
 
