@@ -247,18 +247,6 @@ st.pyplot(pretty_plot)
 #the end
 st.divider()
 
-# Sandra Staub
-ss_df = df.copy()
-st.subheader("Sandra Staub")
-st.text("Tell me about your plot")
-ssdf_us = df[df['Location'] == 'US']
-sns.set(style="whitegrid")
-sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ssdf_us, hue="Size")
-# Add a title using matplotlib
-plt.title = plt.title
-plt.title("US Schools")
-st.pyplot(plt)
-st.divider()
 
 # Victoria Nathaniel
 vn_df = df.copy()
