@@ -23,6 +23,7 @@ am_int_schools = am_df['Location'] != 'US'
 
 fig, axs = plt.subplots(2, 2, figsize=(16, 16))
 
+
 def emp_outcome_corr(x, y, data, ax, title, color):
     scatter = sns.scatterplot(x=x, y=y, data=data, 
                                hue='QS Overall Score', palette='viridis', 
@@ -36,6 +37,10 @@ def emp_outcome_corr(x, y, data, ax, title, color):
     ax.set_xlabel('Employment Outcomes', fontsize=15)
     ax.set_ylabel(y, fontsize=15)
     ax.set_facecolor("whitesmoke")
+    
+    cbar = plt.colorbar(scatter.collections[0], ax=ax)
+    cbar.set_label('QS Overall Score', size=15)
+    cbar.set_ticks(np.arange(0, 101, 10))
 
 emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_US_schools], axs[0, 0], 
                   'US Schools - Academic Reputation', 'navy')
