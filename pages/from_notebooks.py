@@ -25,7 +25,7 @@ fig, axs = plt.subplots(2, 2, figsize=(16, 16))
 
 def emp_outcome_corr(x, y, data, ax, title, color):
     scatter = sns.scatterplot(x=x, y=y, data=data, 
-                               hue='QS Overall Score', palette='Blues', 
+                               hue='QS Overall Score', palette='viridis', 
                                size='QS Overall Score', sizes=(50, 200), 
                                alpha=0.7, edgecolor='none', ax=ax, legend=False)
     
