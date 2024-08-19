@@ -211,7 +211,7 @@ st.subheader("Nuwan Hewabethmage")
 st.text("Tell me about your plot")
 
 nch01_df["2025 Rank"] = pd.to_numeric(nch01_df["2025 Rank"],  errors='coerce')
-
+df = df.dropna(subset=["2025 Rank"])
 st.title("University Ranking by Location")
 
 
