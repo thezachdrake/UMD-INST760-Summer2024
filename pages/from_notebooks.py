@@ -21,7 +21,7 @@ st.write("The following plots display the correlation between employment outcome
 am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
-fig, axs = plt.subplots(2, 2, figsize=(22, 22))
+fig, axs = plt.subplots(2, 2, figsize=(24, 24))
 
 
 def emp_outcome_corr(x, y, data, ax, title, color):
@@ -33,8 +33,8 @@ def emp_outcome_corr(x, y, data, ax, title, color):
     sns.regplot(x=x, y=y, data=data, 
                 scatter=False, ax=ax, color=color)
     
-    ax.set_title(title, fontsize=22, color='black', y=1.05, fontweight='bold')
-    ax.set_xlabel('Employment Outcomes', fontsize=15)
+    ax.set_title(title, fontsize=26, color='black', y=1.05, fontweight='bold')
+    ax.set_xlabel('Employment Outcomes', fontsize=20)
     ax.set_ylabel(y, fontsize=15)
     ax.set_facecolor("whitesmoke")
     
@@ -59,7 +59,7 @@ cbar_ax = fig.add_axes([0.15, 0.05, 0.7, 0.02])
 sm = plt.cm.ScalarMappable(cmap='viridis_r', norm=plt.Normalize(vmin=0, vmax=100))
 sm.set_array([])
 cbar = fig.colorbar(sm, cax=cbar_ax, orientation='horizontal')
-cbar.set_label('QS Overall Score', fontsize=15, labelpad=10)
+cbar.set_label('QS Overall Score', fontsize=20, labelpad=10)
 cbar.ax.tick_params(labelsize=12)
 
 st.pyplot(fig)
