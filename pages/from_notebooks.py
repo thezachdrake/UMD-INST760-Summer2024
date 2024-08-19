@@ -31,7 +31,7 @@ def emp_outcome_corr(x, y, data, ax, title, color):
     sns.regplot(x=x, y=y, data=data, 
                 scatter=False, ax=ax, color=color)
     
-    ax.set_title(title, fontsize=26, color='black', y=1.1, fontweight='bold')
+    ax.set_title(title, fontsize=26, color='black', y=1.05, fontweight='bold')
     ax.set_xlabel('Employment Outcomes', fontsize=20, labelpad=15)
     ax.set_ylabel(y, fontsize=20, labelpad=15)
     ax.set_facecolor("whitesmoke")
