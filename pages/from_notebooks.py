@@ -311,7 +311,8 @@ st.divider()
 lg_df = df.copy()
 st.subheader("Lillian Getachew")
 st.text("Insert plot desc here")
-
+df1=lg_df.sort_values("2025_rank")
+df1 = df1.head(20)
 plt.figure(figsize=(25, 10))
 
 lg_df['employer_reputation'] = pd.to_numeric(df['employer_reputation'], errors='coerce').astype('Int64') #turning the rank values to integers
@@ -321,7 +322,7 @@ lg_df['academic_reputation'] = pd.to_numeric(df['qs_overall_score'], errors='coe
 lg_df['international_research_network'] = pd.to_numeric(df['qs_overall_score'], errors='coerce').astype('Int64') #turning the rank values to integers
 
 #melt the score columns in a new df to be able to compare them
-df_melted = lg_df.melt(id_vars=["location"], value_vars=[ 'employment_outcomes',"employer_reputation","academic_reputation","international_research_network","qs_overall_score"], var_name='Reputation Type', value_name='Score')
+df_melted = df1.melt(id_vars=["location"], value_vars=[ 'employment_outcomes',"employer_reputation","academic_reputation","international_research_network","qs_overall_score"], var_name='Reputation Type', value_name='Score')
 
 plt.figure(figsize=(25, 10))
 sns.catplot(data=df_melted, kind="bar", x="Reputation Type", y="Score",hue="location", ci=None, palette='viridis')
