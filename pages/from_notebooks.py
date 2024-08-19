@@ -266,7 +266,7 @@ st.write("sense to look at US schools, so which ones have the best employer repu
 ss_df_us = ss_df[ss_df['Location'] == 'US']
 sns.set(style="whitegrid")
 # Create scatter plot
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(12, 8))
 sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ss_df_us, hue="Size")
 # List of specific points to label (Employer Reputation > 90 and Employment Outcomes > 90)
 points_to_label = ss_df_us[(ss_df_us['Employer Reputation'] > 90) & (ss_df_us['Employment Outcomes'] > 90)]
