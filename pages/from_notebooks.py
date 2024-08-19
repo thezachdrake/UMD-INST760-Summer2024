@@ -251,9 +251,9 @@ st.divider()
 ss_df = df.copy()
 st.subheader("Sandra Staub")
 st.text("Tell me about your plot")
-df_us = df[df['Location'] == 'US']
+ssdf_us = df[df['Location'] == 'US']
 sns.set(style="whitegrid")
-sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=df_us, hue="Size")
+sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ssdf_us, hue="Size")
 # Add a title using matplotlib
 plt.title = plt.title
 plt.title("US Schools")
