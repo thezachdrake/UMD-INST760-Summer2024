@@ -247,17 +247,16 @@ st.pyplot(pretty_plot)
 #the end
 st.divider()
 
-
 # Sandra Staub
 ss_df = df.copy()
 st.subheader("Sandra Staub")
-st.text("Tell me about your plot")
+st.text("If they are looking for employment in the US after graduation, it makes the most sense to look at US schools, so which ones have the best employer_reputation as well as employment_outcomes.")
 ssdf_us = df[df['Location'] == 'US']
 sns.set(style="whitegrid")
 sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ssdf_us, hue="Size")
 # Add a title using matplotlib
 plt.title = plt.title
-plt.title("US Schools")
+plt.title("US Schools Employer Stats")
 st.pyplot(plt)
 st.divider()
 
