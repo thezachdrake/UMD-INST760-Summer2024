@@ -299,7 +299,7 @@ st.write("Showing the academic reputation, and employment outcomes in USA")
 location_us = vn_df['Location'] == 'US'
 fig=plt.figure()
 
-sns.scatterplot(x='Employment Outcomes', y='Academic Reputation', data=vn_df[location_us], hue='size')
+sns.barplot(x='Employment Outcomes', y='Academic Reputation', data=vn_df[location_us], hue='size')
 
 plt.xlabel('Percentage Employment')
 plt.ylabel('Academic Reputation')
