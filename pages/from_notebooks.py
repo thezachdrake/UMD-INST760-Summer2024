@@ -208,7 +208,7 @@ st.divider()
 #Nuwan Hewabethmage second post
 nch01_df = df.copy()
 st.subheader("Nuwan Hewabethmage")
-st.text("Tell me about your plot")
+st.text("The bar plot visualizes the variation in university rankings by location, showing the average rank of top universities in each region for 2025. By grouping data by location and calculating the mean rank, it highlights which regions generally host higher or lower-ranked institutions")
 
 nch01_df["2025 Rank"] = pd.to_numeric(nch01_df["2025 Rank"],  errors='coerce')
 # nch01_df = nch01_df.dropna(subset=["2025 Rank"])
