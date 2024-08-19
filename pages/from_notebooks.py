@@ -218,10 +218,10 @@ st.title("University Ranking by Location")
 num_institutions = st.sidebar.slider("Number of Top Institutions to Display", min_value=10, max_value=100, value=50)
 
 #Filter the top institutions based on the user's selection
-top_institutions = df.nsmallest(num_institutions, '2025 Rank')
+top_institutions = df.nsmallest(num_institutions, "2025 Rank")
 
 #Group by location and calculate the mean rank
-location_grouped = top_institutions.groupby('Location')['2025 Rank'].mean().reset_index()
+location_grouped = top_institutions.groupby("Location")["2025 Rank"].mean().reset_index()
 
 #Plotting the bar plot
 st.subheader("Average 2025 Rank by Location")
