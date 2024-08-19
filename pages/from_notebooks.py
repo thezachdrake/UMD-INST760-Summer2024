@@ -21,7 +21,9 @@ am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
 fig, axs = plt.subplots(2, 2, figsize=(18, 20))
-
+fig.patch.set_facecolor('white')
+fig.patch.set_edgecolor('black')  
+fig.patch.set_linewidth(5)
 
 def emp_outcome_corr(x, y, data, ax, title, color):
     scatter = sns.scatterplot(x=x, y=y, data=data, 
