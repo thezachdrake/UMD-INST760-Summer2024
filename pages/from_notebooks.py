@@ -20,7 +20,7 @@ st.write("The following plots display the correlation between employment outcome
 
 am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
-pd.to_numeric(am_df['QS Overall Score']).
+am_df['QS Overall Score'] = pd.to_numeric(am_df['QS Overall Score'])
 
 fig, axs = plt.subplots(2, 2, figsize=(16, 16))
 
