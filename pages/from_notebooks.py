@@ -21,7 +21,7 @@ st.write("The following plots display the correlation between employment outcome
 am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
-fig, axs = plt.subplots(2, 2, figsize=(16, 16))
+fig, axs = plt.subplots(2, 2, figsize=(18, 18))
 
 
 def emp_outcome_corr(x, y, data, ax, title, color):
@@ -51,8 +51,7 @@ emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_US_schoo
 emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_schools], axs[1, 1], 
                   'International Schools - Employer Reputation', 'indigo')
 
-plt.tight_layout()
-
+plt.subplots_adjust(wspace=0.3, hspace=0.4)
 st.pyplot(fig)
 
 st.divider()
