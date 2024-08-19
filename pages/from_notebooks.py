@@ -52,9 +52,7 @@ emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_US_schoo
 emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_schools], axs[1, 1], 
                   'International Schools - Employer Reputation', 'indigo')
 
-plt.tight_layout()
-plt.show()
-
+st.pyplot(fig)
 st.divider()
 
 # Kristen Purvis
