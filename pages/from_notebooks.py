@@ -20,7 +20,7 @@ st.write("The plots below analyze correlations between employment outcomes and o
 am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
-fig, axs = plt.subplots(2, 2, figsize=(20,24))
+fig, axs = plt.subplots(2, 2, figsize=(18,24))
 
 def emp_outcome_corr(x, y, data, ax, title, color):
     scatter = sns.scatterplot(x=x, y=y, data=data, 
@@ -51,7 +51,7 @@ emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_scho
 
 
 plt.margins(x=0.1, y=0.1)
-plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.22)  
+plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.24)  
 
 cbar_ax = fig.add_axes([0.15, 0.1, 0.7, 0.02]) 
 sm = plt.cm.ScalarMappable(cmap='viridis_r', norm=plt.Normalize(vmin=0, vmax=100))
