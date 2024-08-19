@@ -295,7 +295,7 @@ st.divider()
 vn_df = df.copy()
 st.subheader("Victoria Nathaniel")
 st.write("Showing the academic reputation, and employment outcomes in USA")
-location_in_us = vn_df['location'] == 'US'
+location_in_us = vn_df['Location'] == 'US'
 fig = plt.figure(figsize=(10, 6))
 sns.scatterplot(data=vn_df[location_in_us], x='employment_outcomes', y='academic_reputation', hue='size', palette='Set2')
 plt.xlabel('Percentage Employment')
