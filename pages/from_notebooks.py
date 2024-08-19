@@ -257,7 +257,7 @@ sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ssdf_us, 
 # Add a title using matplotlib
 plt.title = plt.title
 plt.title("US Schools")
-st.pyplot()
+st.pyplot(plt)
 st.divider()
 
 # Victoria Nathaniel
