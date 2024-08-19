@@ -21,7 +21,7 @@ st.write("The following plots display the correlation between employment outcome
 am_US_schools = am_df['Location'] == 'US'
 am_int_schools = am_df['Location'] != 'US'
 
-fig, axs = plt.subplots(2, 2, figsize=(24, 24))
+fig, axs = plt.subplots(2, 2, figsize=(18, 18))
 
 
 def emp_outcome_corr(x, y, data, ax, title, color):
