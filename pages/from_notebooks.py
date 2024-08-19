@@ -18,63 +18,7 @@ st.subheader("Andrea Murano")
 st.write("##### **Employment Outcome Correlations in US and International Schools**")
 st.write("The following plots display the correlation between employment outcomes and two other scored factors, academic reputation and employer reputation. The employment outcomes score resulting from US schools shows a positive correlation to academic reputation and employer reputation scores. The apparent strength of these relationships in these plots gives some confidence to the claim that US schools with high academic reputation and employer reputation schools are likely to have a high employment outcome score. The visualizations showing non-US schools do not instill this same confidence, though there is a moderately positive correlation. It would be worth breaking this down by country, as well, but for the sake of the question regarding factors might contribute to future employability of students who attended US and non-US schools, it appears that US schools with high academic reputation and employer reputation scores should be considered.") 
 
-def emp_outcome_corr(x, y, data, ax, title, color):
-    if data.empty:
-        ax.text(0.5, 0.5, "No data available", ha='center', va='center')
-        ax.set_title(title, fontsize=18, color='black', y=1.05, fontweight='bold')
-        return
 
-    data = data.dropna(subset=[x, y, 'QS Score'])
-
-    if data.empty:
-        ax.text(0.5, 0.5, "No valid data after removing missing values", ha='center', va='center')
-        ax.set_title(title, fontsize=18, color='black', y=1.05, fontweight='bold')
-        return
-
-    try:
-        scatter = sns.scatterplot(x=x, y=y, data=data, 
-                                   hue='QS Score', palette='Blues', 
-                                   size='QS Score', sizes=(50, 200), 
-                                   alpha=0.7, edgecolor='none', ax=ax)
-        
-        sns.regplot(x=x, y=y, data=data, 
-                    scatter=False, ax=ax, color=color)
-        
-        ax.set_title(title, fontsize=18, color='black', y=1.05, fontweight='bold')
-        ax.set_xlabel('Employment Outcomes', fontsize=15)
-        ax.set_ylabel(y, fontsize=15)
-        ax.set_facecolor("whitesmoke")
-        
-        cbar = plt.colorbar(scatter.collections[0], ax=ax, pad=0.02)
-        cbar.set_label('QS Score', rotation=270, labelpad=15)
-    except Exception as e:
-        ax.text(0.5, 0.5, f"Error: {str(e)}", ha='center', va='center')
-        ax.set_title(title, fontsize=18, color='black', y=1.05, fontweight='bold')
-
-st.title("Employment Outcome Correlations in US and International Schools")
-st.write("The following plots display the correlation between employment outcomes and two other scored factors, academic reputation and employer reputation...")
-
-am_df = df.copy()
-
-am_US_schools = am_df['Location'] == 'US'
-am_int_schools = am_df['Location'] != 'US'
-
-fig, axs = plt.subplots(2, 2, figsize=(16, 16))
-
-emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_US_schools], axs[0, 0], 
-                  'US Schools - Academic Reputation', 'navy')
-
-emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_int_schools], axs[0, 1], 
-                  'International Schools - Academic Reputation', 'indigo')
-
-emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_US_schools], axs[1, 0], 
-                  'US Schools - Employer Reputation', 'navy')
-
-emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_schools], axs[1, 1], 
-                  'International Schools - Employer Reputation', 'indigo')
-
-plt.tight_layout()
-st.pyplot(fig)
 st.divider()
 
 # Kristen Purvis
