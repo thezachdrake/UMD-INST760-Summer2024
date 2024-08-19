@@ -17,7 +17,47 @@ am_df = df.copy()
 st.subheader("Andrea Murano")
 st.write("##### **Employment Outcome Correlations in US and International Schools**")
 st.write("The following plots display the correlation between employment outcomes and two other scored factors, academic reputation and employer reputation. The employment outcomes score resulting from US schools shows a positive correlation to academic reputation and employer reputation scores. The apparent strength of these relationships in these plots gives some confidence to the claim that US schools with high academic reputation and employer reputation schools are likely to have a high employment outcome score. The visualizations showing non-US schools do not instill this same confidence, though there is a moderately positive correlation. It would be worth breaking this down by country, as well, but for the sake of the question regarding factors might contribute to future employability of students who attended US and non-US schools, it appears that US schools with high academic reputation and employer reputation scores should be considered.") 
+am_US_schools = am_df['Location'] == 'US'
+am_int_schools = am_df['Location'] != 'US'
 
+fig, axs = plt.subplots(2, 2, figsize=(16, 16))
+
+# Function to create scatter plot with regression line
+def emp_outcome_corr(x, y, data, ax, title, color):
+    scatter = sns.scatterplot(x=x, y=y, data=data, 
+                               hue='QS Overall Score', palette='Blues', 
+                               size='QS Overall Score', sizes=(50, 200), 
+                               alpha=0.7, edgecolor='none', ax=ax)
+    
+    sns.regplot(x=x, y=y, data=data, 
+                scatter=False, ax=ax, color=color)
+    
+    ax.set_title(title, fontsize=18, color='black', y=1.05, fontweight='bold')
+    ax.set_xlabel('Employment Outcomes', fontsize=15)
+    ax.set_ylabel(y, fontsize=15)
+    ax.set_facecolor("whitesmoke")
+    
+    cbar = plt.colorbar(scatter.collections[0], ax=ax, pad=0.02)
+    cbar.set_label('QS Score', rotation=270, labelpad=15)
+
+# US Schools - Academic Reputation
+emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_US_schools], axs[0, 0], 
+                  'US Schools - Academic Reputation', 'navy')
+
+# International Schools - Academic Reputation
+emp_outcome_corr('Employment Outcomes', 'Academic Reputation', am_df[am_int_schools], axs[0, 1], 
+                  'International Schools - Academic Reputation', 'indigo')
+
+# US Schools - Employer Reputation
+emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_US_schools], axs[1, 0], 
+                  'US Schools - Employer Reputation', 'navy')
+
+# International Schools - Employer Reputation
+emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_schools], axs[1, 1], 
+                  'International Schools - Employer Reputation', 'indigo')
+
+plt.tight_layout()
+plt.show()
 
 st.divider()
 
