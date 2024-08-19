@@ -385,10 +385,9 @@ sns.set(style="whitegrid")
 plt.figure(figsize=(25, 10))
 
 lg_df['2025 Rank'] = pd.to_numeric(lg_df['2025 Rank'], errors='coerce').astype('Int64') 
-df1 = lg_df.sort_values("2025 Rank")
-df1 = df1.head(20) #pick the 20 school with the highest ranking
-sns.countplot(data=df1,x = "location")
-plt.show()
+lg_df = lg_df.sort_values("2025 Rank")
+lg_df = lg_df.head(20) #pick the 20 school with the highest ranking
+
 
 lg_df['Employer Reputation'] = pd.to_numeric(lg_df['Employer Reputation'], errors='coerce').astype('Int64') 
 lg_df['Employment Outcomes'] = pd.to_numeric(lg_df['Employment Outcomes'], errors='coerce').astype('Int64') 
