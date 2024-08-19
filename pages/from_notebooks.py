@@ -275,8 +275,8 @@ sns.set(style="whitegrid")
 # Create scatter plot
 plt.figure(figsize=(12, 8))
 sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ss_df_us, hue="Size")
-# List of specific points to label (Employer Reputation > 95 and Employment Outcomes > 95)
-points_to_label = ss_df_us[(ss_df_us['Employer Reputation'] > 95) & (ss_df_us['Employment Outcomes'] > 95)]
+# List of specific points to label (Employer Reputation > 90 and Employment Outcomes > 90)
+points_to_label = ss_df_us[(ss_df_us['Employer Reputation'] > 90) & (ss_df_us['Employment Outcomes'] > 90)]
 # Add labels
 for index, row in points_to_label.iterrows():
     plt.annotate(
@@ -284,7 +284,7 @@ for index, row in points_to_label.iterrows():
         xy=(row['Employer Reputation'], row['Employment Outcomes']),
         xytext=(row['Employer Reputation'] + 1, row['Employment Outcomes'] + 1),
         arrowprops=dict(facecolor='black', arrowstyle="->"),
-        fontsize=9,
+        fontsize=7,
         ha='right')
 # for index, row in points_to_label.iterrows():
 #    plt.text(row['Employer Reputation'], row['Employment Outcomes'], row['Institution Name'], fontsize=5, ha='right')
