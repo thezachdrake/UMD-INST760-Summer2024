@@ -307,3 +307,10 @@ plt.title('Statistical Representation In USA')
 st.pyplot(plt)
 st.divider()
 
+# Lillian Getachew
+lg_df = df.copy()
+st.subheader("Lillian Getachew")
+st.text("Insert plot desc here")
+
+st.divider()
+
