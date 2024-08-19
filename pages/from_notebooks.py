@@ -211,14 +211,14 @@ st.subheader("Nuwan Hewabethmage")
 st.text("Tell me about your plot")
 
 nch01_df["2025 Rank"] = pd.to_numeric(nch01_df["2025 Rank"],  errors='coerce')
-df = df.dropna(subset=["2025 Rank"])
+# nch01_df = nch01_df.dropna(subset=["2025 Rank"])
 st.title("University Ranking by Location")
 
 
 num_institutions = st.sidebar.slider("Number of Top Institutions to Display", min_value=10, max_value=100, value=50)
 
 #Filter the top institutions based on the user's selection
-top_institutions = df.nsmallest(num_institutions, "2025 Rank")
+top_institutions = nch01_df.nsmallest(num_institutions, "2025 Rank")
 
 #Group by location and calculate the mean rank
 location_grouped = top_institutions.groupby("Location")["2025 Rank"].mean().reset_index()
@@ -237,7 +237,6 @@ st.pyplot(plt)
 #Optional: Show the raw data
 if st.sidebar.checkbox("Show Raw Data"):
     st.write(location_grouped)
-
 
 st.divider()
 
