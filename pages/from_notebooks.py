@@ -294,7 +294,7 @@ st.divider()
 # Victoria Nathaniel
 vn_df = df.copy()
 st.subheader("Victoria Nathaniel")
-st.write("This plot shows academic reputation and employment outcomes of schools in the US. A student can determine if they interested in moving to a location where there are high chances of employment and better education system")
+st.write("This plot shows academic reputation and employment outcomes of schools in the US. A student can determine if they interested in moving to a location where there are high chances of employment and better education system.")
 
 location_in_us = vn_df[vn_df['Location'] == 'US']
 plt.figure(figsize=(10, 6))
