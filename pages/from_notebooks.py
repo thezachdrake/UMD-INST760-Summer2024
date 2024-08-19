@@ -297,7 +297,7 @@ st.subheader("Victoria Nathaniel")
 st.write("Showing the academic reputation, and employment outcomes in USA")
 location_in_us = vn_df['location'] == 'US'
 fig = plt.figure(figsize=(10, 6))
-sns.scatterplot(data=vn_df[location_in_us], x='employment_outcomes', y='academic_reputation', hue='size', palette='Set2', alpha=0.7, ax=ax)
+sns.scatterplot(data=vn_df[location_in_us], x='employment_outcomes', y='academic_reputation', hue='size', palette='Set2')
 plt.xlabel('Percentage Employment')
 plt.ylabel('Academic Reputation')
 plt.title('Statistical Representation In USA')
