@@ -52,6 +52,15 @@ emp_outcome_corr('Employment Outcomes', 'Employer Reputation', am_df[am_int_scho
                   'International Schools - Employer Reputation', 'indigo')
 
 plt.subplots_adjust(wspace=0.3, hspace=0.4)
+
+cbar_ax = fig.add_axes([0.15, 0.05, 0.7, 0.02])
+
+sm = plt.cm.ScalarMappable(cmap='viridis', norm=plt.Normalize(vmin=0, vmax=100))
+sm.set_array([])
+cbar = fig.colorbar(sm, cax=cbar_ax, orientation='horizontal')
+cbar.set_label('QS Overall Score', fontsize=15, labelpad=10)
+cbar.ax.tick_params(labelsize=12)
+
 st.pyplot(fig)
 
 st.divider()
