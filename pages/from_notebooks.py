@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-#import plotly.express as px
-
 
 df = pd.read_csv("notebooks/data.csv")
 
@@ -331,11 +329,11 @@ st.write("which schools are these in the upper right corner?")
 #Filter data
 ss_df_us = ss_df[(ss_df['Location'] == 'US') & (ss_df['Employer Reputation'] > 90) & (ss_df['Employment Outcomes'] > 90)]
 
- # Create a scatter plot with Plotly
-fig = px.scatter(ss_df_us, 
+ # Create a scatter plot
+fig = sns.scatterplot(ss_df_us, 
                 x="Employer Reputation", 
                 y="Employment Outcomes", 
-                color="size", 
+                hue="size", 
                 text="Institution Name",
                 hover_data={
                     'Employer Reputation': True, 
@@ -344,15 +342,15 @@ fig = px.scatter(ss_df_us,
                  })
 
 # Customize hover mode
- fig.update_traces(marker=dict(size=12),
+# fig.update_traces(marker=dict(size=12),
                 textposition='top center',
                 hovertemplate="<b>%{text}</b><br>Employer Reputation: %{x}<br>Employment Outcomes: %{y}<extra></extra>")
 
-# Add a title
+Add a title
  fig.update_layout(title="US Schools")
 
 # Display the plot
- st.plotly_chart(fig)
+ st.pyplot(fig)
 st.divider()
 
 # Victoria Nathaniel
