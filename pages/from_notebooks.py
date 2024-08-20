@@ -344,7 +344,8 @@ sns.scatterplot(data=ss_df_us,
 #Add a title
 fig.update_layout(title="US Schools")
 # Display the plot
-st.pyplot(fig)
+st.pyplot(plt)
+
 st.divider()
 
 # Victoria Nathaniel
