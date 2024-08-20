@@ -396,9 +396,9 @@ lg_df['Academic Reputation'] = pd.to_numeric(lg_df['Academic Reputation'], error
 lg_df['International Research Network'] = pd.to_numeric(lg_df['International Research Network'], errors='coerce').astype('Int64') 
 
 #melt the score columns in a new df to be able to compare them
-df_melted = lg_df.melt(id_vars=["location"], value_vars=[ 'Employment Outcomes',"Employer Reputation","Academic Reputation","International Research Network","QS Overall Score"], var_name='Reputation Type', value_name='Score')
+df_melted = lg_df.melt(id_vars=['location'], value_vars=['Employment Outcomes','Employer Reputation',Academic Reputation,International Research Network,QS Overall Score], var_name='Reputation Type', value_name='Score')
 
-sns.catplot(data=df_melted, kind="bar", x="Reputation Type", y="Score",hue="location", ci=None, edgecolor="black")
+sns.catplot(data=df_melted, kind=bar, x=Reputation Type, y=Score,hue=location, ci=None, edgecolor=black)
 plt.xticks(rotation=90)
 plt.ylim(75, 100) 
 plt.show()
