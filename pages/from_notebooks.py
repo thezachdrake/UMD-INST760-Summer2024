@@ -331,7 +331,7 @@ ss_df_us = ss_df[(ss_df['Location'] == 'US') &
                  (ss_df['Employment Outcomes'] > 90)]
 
 # Set up the figure size and title
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(8, 8))
 plt.title("US Schools")
 
 # Create a scatter plot with Seaborn
