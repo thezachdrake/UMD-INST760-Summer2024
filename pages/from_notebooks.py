@@ -324,28 +324,31 @@ for index, row in points_to_label.iterrows():
 st.pyplot(plt)
 
 
-plt.title("US Schools Employer Stats")
-st.write("which schools are these in the upper right corner?")
-#Filter data
-ss_df_us = ss_df[(ss_df['Location'] == 'US') & (ss_df['Employer Reputation'] > 90) & (ss_df['Employment Outcomes'] > 90)]
-# Create a scatter plot
+# Filter data
+ss_df_us = ss_df[(ss_df['Location'] == 'US') & 
+                 (ss_df['Employer Reputation'] > 90) & 
+                 (ss_df['Employment Outcomes'] > 90)]
+
+# Set up the figure size and title
+plt.figure(figsize=(12, 8))
+plt.title("US Schools")
+
+# Create a scatter plot with Seaborn
 sns.scatterplot(data=ss_df_us, 
                 x="Employer Reputation", 
                 y="Employment Outcomes", 
-                hue="size", 
-                text="Institution Name",
-                )
+                hue="Size",  # Use 'hue' to color points by the "Size" column
+                s=100)  # Set marker size
 
-# Customize hover mode
-# fig.update_traces(marker=dict(size=12),
-#                textposition='top center',
-#               hovertemplate="<b>%{text}</b><br>Employer Reputation: %{x}<br>Employment Outcomes: %{y}<extra></extra>")
+# Add labels for specific points (optional)
+for index, row in ss_df_us.iterrows():
+    plt.text(row['Employer Reputation'] + 0.2, 
+             row['Employment Outcomes'] + 0.2, 
+             row['Institution Name'], 
+             fontsize=9)
 
-#Add a title
-fig.update_layout(title="US Schools")
-# Display the plot
+# Display the plot in Streamlit
 st.pyplot(plt)
-
 st.divider()
 
 # Victoria Nathaniel
