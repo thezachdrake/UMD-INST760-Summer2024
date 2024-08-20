@@ -379,7 +379,13 @@ st.divider()
 # Lillian Getachew
 lg_df = df.copy()
 st.subheader("Lillian Getachew")
-st.text("This plot aims to create a variable called Reputation Type by melting all ranking\nattributes together: Employment Outcomes, Employer Reputation, Academic Reputation\nInternational Research Network, and QS Overall Score. Then this variableis graphed\nusing a barplot for the 20 schools ranked high in 2025. The colors and legend will\nshow whch countries these school are in so this view will allow us to see which\ncountry is the best place to pick a school in.")
+
+st.text("""This plot aims to create a variable called Reputation Type by melting all ranking\n
+         attributes together: Employment Outcomes, Employer Reputation, Academic Reputation\n
+         International Research Network, and QS Overall Score. Then this variableis graphed\n
+         using a barplot for the 20 schools ranked high in 2025. The colors and legend will\n
+         show whch countries these school are in so this view will allow us to see which\n
+         country is the best place to pick a school in.""")
 
 sns.set(style="whitegrid")
 plt.figure(figsize=(25, 10))
@@ -389,19 +395,19 @@ lg_df = lg_df.sort_values("2025 Rank")
 lg_df = lg_df.head(20) #pick the 20 school with the highest ranking
 
 
-lg_df['Employer Reputation'] = pd.to_numeric(lg_df['Employer Reputation'], errors='coerce').astype('Int64') 
-lg_df['Employment Outcomes'] = pd.to_numeric(lg_df['Employment Outcomes'], errors='coerce').astype('Int64') 
-lg_df['QS Overall Score'] = pd.to_numeric(lg_df['QS Overall Score'], errors='coerce').astype('Int64') 
-lg_df['Academic Reputation'] = pd.to_numeric(lg_df['Academic Reputation'], errors='coerce').astype('Int64') 
-lg_df['International Research Network'] = pd.to_numeric(lg_df['International Research Network'], errors='coerce').astype('Int64') 
+lg_df['Employer Reputation'] = pd.to_numeric(lg_df['Employer Reputation'], errors='coerce').astype('Float64') 
+lg_df['Employment Outcomes'] = pd.to_numeric(lg_df['Employment Outcomes'], errors='coerce').astype('Float64') 
+lg_df['QS Overall Score'] = pd.to_numeric(lg_df['QS Overall Score'], errors='coerce').astype('Float64') 
+lg_df['Academic Reputation'] = pd.to_numeric(lg_df['Academic Reputation'], errors='coerce').astype('Float64') 
+lg_df['International Research Network'] = pd.to_numeric(lg_df['International Research Network'], errors='coerce').astype('Float64') 
 
 #melt the score columns in a new df to be able to compare them
-df_melted = lg_df.melt(id_vars=['location'], value_vars=['Employment Outcomes','Employer Reputation','Academic Reputation','International Research Network','QS Overall Score'], var_name='Reputation Type', value_name='Score')
+df_melted = lg_df.melt(id_vars=["Location"], value_vars=[ 'Employment Outcomes',"Employer Reputation","Academic Reputation","International Research Network","QS Overall Score"], var_name='Reputation Type', value_name='Score')
 
-sns.catplot(data=df_melted, kind='bar', x='Reputation Type', y='Score',hue='location', ci=None, edgecolor=black)
+sns.catplot(data=df_melted, kind="bar", x="Reputation Type", y="Score",hue="Location", ci=None, edgecolor="black")
 plt.xticks(rotation=90)
 plt.ylim(75, 100) 
-plt.show()
+st.pyplot(plt)
 
 st.divider()
 
