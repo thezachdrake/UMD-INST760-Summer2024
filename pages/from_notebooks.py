@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+pip install streamlit plotly
+import plotly.express as px 
 
 
 df = pd.read_csv("notebooks/data.csv")
@@ -327,10 +329,8 @@ for index, row in points_to_label.iterrows():
 plt.title("US Schools Employer Stats")
 st.pyplot(plt)
 
-st.write("which schools are these in the upper write corner?")
-pip install streamlit plotly
-import plotly.express as px 
- #Filter data
+st.write("which schools are these in the upper right corner?")
+#Filter data
 ss_df_us = ss_df[(ss_df['Location'] == 'US') & 
           (ss_df['Employer Reputation'] > 90) & 
          (ss_df['Employment Outcomes'] > 90)]
