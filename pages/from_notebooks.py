@@ -327,8 +327,7 @@ for index, row in points_to_label.iterrows():
 
 
 plt.title("US Schools Employer Stats")
-st.pyplot(plt)
-
+st.plotly(fig)
 st.write("which schools are these in the upper right corner?")
 #Filter data
 ss_df_us = ss_df[(ss_df['Location'] == 'US') & 
@@ -355,7 +354,7 @@ fig.update_traces(marker=dict(size=12),
 # Add a title
 fig.update_layout(title="US Schools")
 
-# Display the plot in Streamlit (or Plotly directly)
+# Display the plot
 st.plotly_chart(fig)
 st.divider()
 
