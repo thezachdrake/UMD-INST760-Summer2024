@@ -344,7 +344,7 @@ sns.scatterplot(data=ss_df_us,
 # Add labels for specific points (optional)
 for index, row in ss_df_us.iterrows():
     plt.text(row['Employer Reputation'] + 0.2, 
-             row['Employment Outcomes'] - 0.2, 
+             row['Employment Outcomes'] + 0.3, 
              row['Institution Name'], 
              fontsize=7)
 
