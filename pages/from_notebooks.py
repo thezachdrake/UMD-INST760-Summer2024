@@ -346,7 +346,7 @@ for index, row in ss_df_us.iterrows():
     plt.text(row['Employer Reputation'] + 0.2, 
              row['Employment Outcomes'] + 0.2, 
              row['Institution Name'], 
-             fontsize=9)
+             fontsize=7)
 
 # Display the plot in Streamlit
 st.pyplot(plt)
