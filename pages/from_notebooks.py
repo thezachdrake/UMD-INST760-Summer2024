@@ -324,7 +324,7 @@ for index, row in points_to_label.iterrows():
 st.pyplot(plt)
 
 plt.title("US Schools Employer Stats")
-st.write("which schools are these in the upper right corner?")
+st.write("Which schools are these in the upper right corner? These are the schools that will be most desirable by our applicant.")
 # Filter data
 ss_df_us = ss_df[(ss_df['Location'] == 'US') & 
                  (ss_df['Employer Reputation'] > 90) & 
