@@ -323,7 +323,8 @@ for index, row in points_to_label.iterrows():
 #    plt.text(row['Employer Reputation'], row['Employment Outcomes'], row['Institution Name'], fontsize=5, ha='right')
 st.pyplot(plt)
 
-
+plt.title("US Schools Employer Stats")
+st.write("which schools are these in the upper right corner?")
 # Filter data
 ss_df_us = ss_df[(ss_df['Location'] == 'US') & 
                  (ss_df['Employer Reputation'] > 90) & 
