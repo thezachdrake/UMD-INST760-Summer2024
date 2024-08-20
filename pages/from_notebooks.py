@@ -379,9 +379,9 @@ st.divider()
 # Lillian Getachew
 lg_df = df.copy()
 st.subheader("Lillian Getachew")
-st.text("This plot aims to create a variable called Reputation Type by melting all ranking attributes together: Employment Outcomes, Employer Reputation, Academic Reputation,/n
-International Research Network, and QS Overall Score. Then this variable is graphed using a barplot for the 20 schools ranked high in 2025. The colors and legend will show whch/n
-countries these school are in so this view will allow us to see which country is the best place to pick a school in.")
+st.text("This plot aims to create a variable called Reputation Type by melting all ranking attributes together: Employment Outcomes, Employer Reputation, Academic Reputation")
+st.text("International Research Network, and QS Overall Score. Then this variable is graphed using a barplot for the 20 schools ranked high in 2025. The colors and legend will")
+st.text("show whch countries these school are in so this view will allow us to see which country is the best place to pick a school in.")
 
 sns.set(style="whitegrid")
 plt.figure(figsize=(25, 10))
