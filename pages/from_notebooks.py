@@ -307,6 +307,7 @@ ss_df_us = ss_df[ss_df['Location'] == 'US']
 sns.set(style="whitegrid")
 # Create scatter plot
 plt.figure(figsize=(12, 8))
+plt.title("US Schools Employer Stats")
 sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ss_df_us, hue="Size")
 # List of specific points to label (Employer Reputation > 90 and Employment Outcomes > 90)
 points_to_label = ss_df_us[(ss_df_us['Employer Reputation'] > 90) & (ss_df_us['Employment Outcomes'] > 90)]
