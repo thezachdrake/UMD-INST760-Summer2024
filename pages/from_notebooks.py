@@ -308,7 +308,9 @@ sns.set(style="whitegrid")
 # Create scatter plot
 plt.figure(figsize=(12, 8))
 plt.title("US Schools Employer Stats")
-sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ss_df_us, hue="Size")
+# Specify the order of the legend items
+size_order = ['S', 'M', 'L', 'XL']
+sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ss_df_us, hue="Size", hue_order=size_order)
 # List of specific points to label (Employer Reputation > 90 and Employment Outcomes > 90)
 #points_to_label = ss_df_us[(ss_df_us['Employer Reputation'] > 90) & (ss_df_us['Employment Outcomes'] > 90)]
 # Add labels
@@ -339,8 +341,8 @@ plt.title("US Schools with Strong Employer Relationships")
 sns.scatterplot(data=ss_df_us, 
                 x="Employer Reputation", 
                 y="Employment Outcomes", 
-                hue="Size",  # Use 'hue' to color points by the "Size" column
-                s=100)  # Set marker size
+                hue="Size",
+                s=100)
 
 # Add labels for specific points (optional)
 for index, row in ss_df_us.iterrows():
