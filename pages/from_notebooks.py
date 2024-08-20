@@ -322,10 +322,9 @@ for index, row in points_to_label.iterrows():
 # for index, row in points_to_label.iterrows():
 #    plt.text(row['Employer Reputation'], row['Employment Outcomes'], row['Institution Name'], fontsize=5, ha='right')
 
-
 plt.title("US Schools Employer Stats")
-st.plotly(fig)
 st.write("which schools are these in the upper right corner?")
+
 #Filter data
 ss_df_us = ss_df[(ss_df['Location'] == 'US') & (ss_df['Employer Reputation'] > 90) & (ss_df['Employment Outcomes'] > 90)]
 
