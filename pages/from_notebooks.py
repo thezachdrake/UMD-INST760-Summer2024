@@ -324,7 +324,7 @@ for index, row in points_to_label.iterrows():
 #    plt.text(row['Employer Reputation'], row['Employment Outcomes'], row['Institution Name'], fontsize=5, ha='right')
 st.pyplot(plt)
 
-plt.title("US Schools Employer Stats")
+
 st.write("Which schools are these in the upper right corner? These are the schools that will be most desirable by our applicant.")
 # Filter data
 ss_df_us = ss_df[(ss_df['Location'] == 'US') & 
@@ -333,7 +333,7 @@ ss_df_us = ss_df[(ss_df['Location'] == 'US') &
 
 # Set up the figure size and title
 plt.figure(figsize=(8, 8))
-plt.title("US Schools")
+plt.title("US Schools with Strong Employer Relationships")
 
 # Create a scatter plot with Seaborn
 sns.scatterplot(data=ss_df_us, 
