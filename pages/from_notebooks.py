@@ -346,11 +346,10 @@ fig = sns.scatterplot(ss_df_us,
                 textposition='top center',
                 hovertemplate="<b>%{text}</b><br>Employer Reputation: %{x}<br>Employment Outcomes: %{y}<extra></extra>")
 
-Add a title
- fig.update_layout(title="US Schools")
-
+#Add a title
+fig.update_layout(title="US Schools")
 # Display the plot
- st.pyplot(fig)
+st.pyplot(fig)
 st.divider()
 
 # Victoria Nathaniel
