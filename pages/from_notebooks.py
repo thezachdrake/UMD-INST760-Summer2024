@@ -356,7 +356,6 @@ fig.update_traces(marker=dict(size=12),
 fig.update_layout(title="US Schools")
 
 # Display the plot in Streamlit (or Plotly directly)
-fig.show()
 st.plotly_chart(fig)
 st.divider()
 
