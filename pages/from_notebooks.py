@@ -310,16 +310,16 @@ plt.figure(figsize=(12, 8))
 plt.title("US Schools Employer Stats")
 sns.scatterplot(x="Employer Reputation", y="Employment Outcomes", data=ss_df_us, hue="Size")
 # List of specific points to label (Employer Reputation > 90 and Employment Outcomes > 90)
-points_to_label = ss_df_us[(ss_df_us['Employer Reputation'] > 90) & (ss_df_us['Employment Outcomes'] > 90)]
+#points_to_label = ss_df_us[(ss_df_us['Employer Reputation'] > 90) & (ss_df_us['Employment Outcomes'] > 90)]
 # Add labels
-for index, row in points_to_label.iterrows():
-    plt.annotate(
-        row['Institution Name'],
-        xy=(row['Employer Reputation'], row['Employment Outcomes']),
-        xytext=(row['Employer Reputation'] + 5, row['Employment Outcomes'] + 2),
-        arrowprops=dict(facecolor='black', arrowstyle="->"),
-        fontsize=7,
-        ha='right')
+#for index, row in points_to_label.iterrows():
+#    plt.annotate(
+#       row['Institution Name'],
+#       xy=(row['Employer Reputation'], row['Employment Outcomes']),
+#        xytext=(row['Employer Reputation'] + 5, row['Employment Outcomes'] + 2),
+#        arrowprops=dict(facecolor='black', arrowstyle="->"),
+#        fontsize=7,
+#        ha='right')
 # for index, row in points_to_label.iterrows():
 #    plt.text(row['Employer Reputation'], row['Employment Outcomes'], row['Institution Name'], fontsize=5, ha='right')
 st.pyplot(plt)
